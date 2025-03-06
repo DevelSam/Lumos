@@ -1,0 +1,29 @@
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+.role{
+    text-transform: capitalize;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.title{
+    font-size: 32px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.image{
+    width: 100%;
+   max-height: 450px;
+   border-radius: 30px;
+
+}

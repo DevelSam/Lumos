@@ -1,0 +1,179 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 6rem;
+    border-radius: 5px;
+}
+.content::after{
+    content: '';
+    background: linear-gradient( to right, rgb(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 1;
+}
+.film-info__block{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.film-button__block{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.film__button-watch{
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.film-watch__link{
+    width: 100%;
+}
+.film__button-trailer{
+    padding: 20px 40px;
+    width: 80%;
+}
+.film-info__block p {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #3B3C40;
+}
+.film-text__block{
+    display: flex;
+    flex-direction: column;
+
+    padding: 60px 40px;
+    max-width: 30%;
+    min-height: 70vh;
+    position: relative;
+    z-index: 2;
+}
+.film-button__block{
+    flex-grow: 1;
+    align-content: flex-end;
+}
+.film-title{
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.film-description{
+    font-size: 20px;
+    font-weight: 400;
+}
+.film{
+    padding-top: 120px;
+}
+.film-slogan{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+.actor-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+.role{
+    text-transform: capitalize;
+    font-size: 21px;
+    font-weight: 800;
+}
+.info-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.actor-title{
+    font-size: 32px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.info-text{
+    max-width: 50%;
+    line-height: 26px;
+    color: white;
+    font-size: 20px;
+}
+.info-title{
+    font-size: 36px;
+    color: white;
+    font-weight: 900;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.info-reviews__block{width: 45%;
+    display: flex;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #3B3C40;
+}
+.info-reviews__choice{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+.info-reviews__choice > div{
+    display: flex;
+}
+.choice-title{
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.choice-text{
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.8;
+    line-height: 24px;
+    margin-bottom: 30px;
+}.info-block{
+    display: flex;
+    justify-content: space-between;
+}
+.choice-content{
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+.choice-content > div{
+display: flex;
+align-items: flex-end;
+align-items: center;
+justify-content: center;
+gap: 5px;
+cursor: pointer;
+}
+.image-positive, .image-negative{
+    width: 30px;
+    
+}
+.choice-positive, .choice-negative{
+    font-size: 18px;
+    font-weight: 700;
+}
