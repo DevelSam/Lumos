@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import "swiper/css";
 import "swiper/css/bundle";
+import { ImageComponent } from '../ImageComponent/ImageComponent';
 export default function MovieActor({ filmsdata}){
 
     const ArrActor = filmsdata.persons.slice(0, 20)
@@ -22,10 +23,10 @@ export default function MovieActor({ filmsdata}){
             
             {ArrActor.map(data => (
                 <SwiperSlide  key={data.id}>
-                <Link to={`/actor/${data.id}`}> 
+                <Link className={styles.link} to={`/actor/${data.id}`}> 
                 <div className={styles.content}>
-                    <div className={styles.block}>
-                    <img  className={styles.image} src={data.photo} alt=""/>
+                    <div className={`${styles.block} ${styles.image}`}>
+                    <ImageComponent  className={styles.image} src={data.photo} alt=""/>
                     </div>
                     <p className={styles.role}>{data.profession}</p>
                     <p className={styles.name}>{data.name ? data.name:'err'}</p>

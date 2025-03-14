@@ -3,6 +3,7 @@ import styles from './MovieHero.module.css'
 import PlayerModal from '../PlayerModal/PlayerModal';
 import { useState } from 'react';
 import PropTypes from 'prop-types'
+import { BackdropImage } from '../BackdropImage';
 export default function MovieHero({ filmsdata }) {
     const [isWatchModalOpen, setIsWatchModalOpen] = useState(false);
     const [isTrailerModalOpen, setIsTrailerModalOpen] = useState(false);
@@ -31,9 +32,9 @@ export default function MovieHero({ filmsdata }) {
     <section className={styles.section}>
     {console.log(filmsdata)}
       <div className={`container`}>
-        <div
+        <BackdropImage
           key={filmsdata.id}
-          style={{ backgroundImage: `url(${filmsdata.backdrop?.url})` }}
+          src={filmsdata.backdrop?.url}
           className={styles.content}
         >
           <div className={styles['text-block']}>
@@ -80,7 +81,7 @@ export default function MovieHero({ filmsdata }) {
                 
             </div>
           </div>
-        </div>
+        </BackdropImage>
       </div>
     </section>
   );

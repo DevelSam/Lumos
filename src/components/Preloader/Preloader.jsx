@@ -1,10 +1,10 @@
-import './Preloader.css'
+import styles from './Preloader.module.css'
 
 export default function Preloader(){
     return(
         
-            <div className="preloader-block">
-                <img className="preloader-load" src="../../assets/371.gif" alt="" />
+            <div className={styles.block}>
+                <p className={styles.load}>Loading...</p>
             </div>
     )
 }

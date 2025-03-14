@@ -1,0 +1,15 @@
+.load{
+    background-image: linear-gradient(45deg, #e99a8b, #FB5E00);
+    font-size: 64px;
+    color: transparent;
+    background-clip: text;
+}
+.block{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: black;
+}

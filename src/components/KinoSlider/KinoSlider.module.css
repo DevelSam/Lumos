@@ -24,11 +24,14 @@
 
 .image-block {
     position: relative;
-   
     flex-shrink: 1; /* Запрещаем уменьшение высоты */
     flex-grow: 1;
     aspect-ratio: 2/3; /* Сохраняем соотношение сторон как у кинопостера */
-    min-height: 400px; /* Минимальная высота */
+    min-height: 500px; /* Минимальная высота */
+    max-height: 500px;
+}
+.image-block div img {
+    border-radius: 30px;
 }
 .image-block:hover::after{
     opacity: 1;
@@ -56,6 +59,7 @@
     border-radius: 30px;
     object-fit: cover;
     cursor: pointer;
+    
 }
 .title{
     font-size: 32px;

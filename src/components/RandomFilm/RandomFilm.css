@@ -5,6 +5,7 @@
     min-height: 550px;
     background-repeat: no-repeat;
     background-position: top center;
+    background-image: url(../../assets//Placeholder.svg);
     background-size: cover;
     display: flex;
     flex-direction: row;

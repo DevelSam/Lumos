@@ -3,6 +3,6 @@ let currentKeyIndex = 0
 export const getCurrentKey = () => API_KEYS[currentKeyIndex]
 
 export const rotateKey = () => {
-    currentKeyIndex = (currentKeyIndex + 1) % API_KEYS
-    console.log('SWITCHED KEY')
+  currentKeyIndex = (currentKeyIndex + 1) % API_KEYS
+  console.log('SWITCHED KEY')
 }

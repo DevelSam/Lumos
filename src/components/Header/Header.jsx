@@ -15,9 +15,15 @@ export default function Header(){
             <NavLink exact activeClassName="active"  className="header-list__item-link" to='/'>
             <li className="header-list__item">Главная</li>
             </NavLink>
-            <li className="header-list__item"><a href="" className="header-list__item-link">Подписка</a></li>
-            <li className="header-list__item"><a href="" className="header-list__item-link">Моё</a></li>
-            <li className="header-list__item"><a href="" className="header-list__item-link">Категории</a></li>
+            <NavLink exact activeClassName="active"  className="header-list__item-link" to='/movie'>
+            <li className="header-list__item">Фильмы</li>
+            </NavLink>
+            <NavLink exact activeClassName="active"  className="header-list__item-link" to='/tv-series'>
+            <li className="header-list__item">Cериалы</li>
+            </NavLink>
+            <NavLink exact activeClassName="active"  className="header-list__item-link" to="/category">
+            <li className="header-list__item">Категории</li>
+            </NavLink>
             </ul>
             </nav>
             <nav className="header-nav__kabinet">
