@@ -10,7 +10,7 @@ export const FetchCollectionMovies = async (list) => {
     },
   }
   try {
-    const response = await fetch(`https://api.kinopoisk.dev/v1.4/movie?page=1&limit=100&lists=${list}`, options)
+    const response = await fetch(`https://api.kinopoisk.dev/v1.4/movie?page=1&limit=30&lists=${list}`, options)
     if (response.status === 403) {
       rotateKey()
       return FetchCollectionMovies(list)
@@ -18,7 +18,7 @@ export const FetchCollectionMovies = async (list) => {
     if (!response.ok) {
       throw new Error('Запрос не сработал!')
     }
-    console.log(response)
+
     return await response.json()
   } catch (err) {
     console.log(err, 'Ошибка запроса')

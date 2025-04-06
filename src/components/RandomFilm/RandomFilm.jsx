@@ -1,8 +1,9 @@
 import './RandomFilm.css'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 // import placeholder from "../../assets/Placeholder.svg";
 import { BackdropImage } from '../BackdropImage'
-export default function RandomFilm({ data, title }) {
+const RandomFilm = memo(function randomFilm({ data, title }) {
   console.log(data)
   return (
     <section className='random'>
@@ -39,4 +40,5 @@ export default function RandomFilm({ data, title }) {
       </div>
     </section>
   )
-}
+})
+export default RandomFilm

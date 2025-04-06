@@ -1,9 +1,9 @@
-.container{
+.container {
   padding-left: 6rem;
   padding-right: 6rem;
   margin: 0 auto;
 }
-.button{
+.button {
   border-radius: 100px;
   border: none;
   color: white;
@@ -12,12 +12,8 @@
   align-items: center;
   cursor: pointer;
 }
-.button-watch{
-  background: linear-gradient(
-45deg,
-#FB5E00,
-#FF6F61
-);
+.button-watch {
+  background: linear-gradient(45deg, #fb5e00, #ff6f61);
   font-size: 18px;
   font-weight: 700;
   padding: 20px 40px;
@@ -28,34 +24,28 @@
   align-self: center;
   justify-content: center;
   gap: 10px;
-  
 }
-.button-watch:hover{
+.button-watch:hover {
   transform: scale(1.05);
-  transition: 0.3s ease
+  transition: 0.3s ease;
 }
 .button-trailer {
-  background-color: rgba(31,31,31,.95);
+  background-color: rgba(31, 31, 31, 0.95);
   padding: 24px 40px;
   font-size: 18px;
   font-weight: 700;
-  transition: 0.3s ease
-  
+  transition: 0.3s ease;
 }
-.button-trailer:hover{
+.button-trailer:hover {
   transform: scale(1.05);
-  background-color: rgba(31,31,31,.90);
-  transition: 0.3s ease
+  background-color: rgba(31, 31, 31, 0.9);
+  transition: 0.3s ease;
 }
-.unscroll{
+.unscroll {
   overflow: hidden;
 }
-.hero-watch__button{
-  background: linear-gradient(
-45deg,
-#FB5E00,
-#FF6F61
-);
+.hero-watch__button {
+  background: linear-gradient(45deg, #fb5e00, #ff6f61);
   font-size: 18px;
   font-weight: 700;
   padding: 20px 40px;
@@ -66,12 +56,13 @@
   align-self: center;
   justify-content: center;
   gap: 10px;
-  
+  border: none;
+  cursor: pointer;
 }
-.hero-watch__button:hover{
+.hero-watch__button:hover {
   transform: scale(1.05);
-  transition: 0.3s ease
+  transition: 0.3s ease;
 }
-.section{
+.section {
   padding: 8rem;
 }

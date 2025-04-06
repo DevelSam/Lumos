@@ -14,7 +14,7 @@ import MovieInfo from "../components/MovieInfo/MovieInfo";
 import MovieActor from "../components/MovieActor/MovieActor";
 import MovieSimular from "../components/MovieSimular/MovieSimular";
 
-export default function FilmPage(){
+export default function MoviePage(){
   
     const params = useParams()
     const id = parseInt(params.id)

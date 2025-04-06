@@ -1,13 +1,13 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { memo } from 'react'
 import styles from './KinoSlider.module.css'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import { ImageComponent } from '../ImageComponent/ImageComponent'
 import 'swiper/css'
 import 'swiper/css/bundle'
 
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
-function KinoSlider({ data, title, collection }) {
+const KinoSlider = memo(function kino({ data, title, collection }) {
   function formatRationg(rating) {
     return Number.isInteger(rating) ? rating.toFixed(1) : rating.toFixed(1)
   }
@@ -36,7 +36,7 @@ function KinoSlider({ data, title, collection }) {
               <Link to={`/film/${movie.id}`}>
                 <div className={styles.content}>
                   <div className={styles[`image-block`]}>
-                    <ImageComponent src={movie.poster.url} className={styles.image} height={'500px'} alt='' />
+                    <ImageComponent src={movie.poster.url} className={styles.image} height={'100%'} alt='' />
                   </div>
                   {movie.rating.imdb || movie.rating.kp ? (
                     <div className={styles.score}>
@@ -54,10 +54,6 @@ function KinoSlider({ data, title, collection }) {
       </div>
     </section>
   )
-}
-KinoSlider.propTypes = {
-  data: PropTypes.any,
-  title: PropTypes.string,
-  collection: PropTypes.string,
-}
+})
+
 export default KinoSlider
