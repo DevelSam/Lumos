@@ -20,7 +20,9 @@ export default function LoginForm({ open, setOpen, toggle }) {
             <input name='login' id='log' type='text' placeholder='Логин' required />
             <label htmlFor='pas'>Пароль</label>
             <input name='password' minLength={8} id='pas' type='password' placeholder='Пароль' required />
-            <button className={`hero-watch__button ${styles.button}`}>Отправить</button>
+            <button className={`hero-watch__button ${styles.button}`} type='submit'>
+              Отправить
+            </button>
           </form>
           <div className={styles.redirect}>
             <p className={styles.registration}>
