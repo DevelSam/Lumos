@@ -18,28 +18,6 @@
 .line {
   width: 100%;
 }
-.form {
-  padding: 20px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.form label {
-  margin-bottom: 10px;
-  font-size: 18px;
-  opacity: 0.8;
-  font-weight: 500;
-}
-.form input {
-  border-radius: 5px;
-  width: 300px;
-  padding: 10px;
-  margin-bottom: 30px;
-  border: none;
-  outline: none;
-  background-color: #ffffff;
-  color: black;
-}
 
 .redirect {
   padding: 20px;

@@ -17,8 +17,7 @@ export default function CollectionsPage() {
   const { data: CollectionTitle, isLoading: CollectionTitleLoading } = useQuery(['CollectionTitle', collection], () =>
     FetchCollection(collection),
   )
-  console.log(CollectionData)
-  console.log(CollectionTitle)
+
   function formatRationg(rating) {
     return Number.isInteger(rating) ? rating.toFixed(1) : rating.toFixed(1)
   }
@@ -28,7 +27,6 @@ export default function CollectionsPage() {
         <Preloader />
       ) : (
         <>
-          {' '}
           <Header />
           <section className={styles.section}>
             <div className={`container ${styles.container}`}>
@@ -38,7 +36,7 @@ export default function CollectionsPage() {
                   <div key={value.id} className={styles.content}>
                     <Link to={`/film/${value.id}`}>
                       <div className={`${styles.block} ${styles.image}`}>
-                        <ImageComponent loading='lazy' src={value.poster?.url} alt='' />
+                        <ImageComponent src={value.poster?.url} alt='' />
                       </div>
                       {value?.rating?.imdb || value?.rating?.kp ? (
                         <div className={styles.score}>
@@ -51,7 +49,7 @@ export default function CollectionsPage() {
                         </div>
                       ) : null}
                     </Link>
-                    {/* <p className={styles.title}>{value.name}</p> */}
+                    <p className={styles.name}>{value.name || value.alternativeName}</p>
                   </div>
                 ))}
               </div>

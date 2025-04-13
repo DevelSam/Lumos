@@ -1,6 +1,16 @@
+import { useState } from 'react'
 import Modal from '../Modal/Modal'
 import styles from './LoginForm.module.css'
+import Input from '../Input/Input'
+import Form from '../Form/Form'
 export default function LoginForm({ open, setOpen, toggle }) {
+  const [formData, setFormData] = useState({ username: '', password: '' })
+  const hundleSubmit = (e) => {
+    e.preventDefault()
+    if (formData.username !== ' ' && formData.password !== ' ') {
+      console.log(formData)
+    }
+  }
   const openWatchModal = () => {
     setOpen(true)
   }
@@ -12,18 +22,24 @@ export default function LoginForm({ open, setOpen, toggle }) {
     <div className='header-kabinet'>
       <div onClick={openWatchModal} className='header-kabinet__img' />
       <Modal isOpen={open} onClose={closeWatchModal}>
-        <div className={styles.container}>
-          <h1 className={styles.title}>Авторизация</h1>
-          <hr className={styles.line} />
-          <form action='' className={styles.form}>
-            <label htmlFor='log'>Логин</label>
-            <input name='login' id='log' type='text' placeholder='Логин' required />
-            <label htmlFor='pas'>Пароль</label>
-            <input name='password' minLength={8} id='pas' type='password' placeholder='Пароль' required />
-            <button className={`hero-watch__button ${styles.button}`} type='submit'>
-              Отправить
-            </button>
-          </form>
+        <Form nameForm='Авторизация' onSubmit={hundleSubmit} className={styles.form}>
+          <Input
+            onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+            name='login'
+            label={'Логин'}
+            type='text'
+            placeholder='Логин'
+            required
+          />
+          <Input
+            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+            name='password'
+            label={'Пароль'}
+            minLength={8}
+            type='password'
+            placeholder='Пароль'
+            required
+          />
           <div className={styles.redirect}>
             <p className={styles.registration}>
               Ещё не зарегестрировались?{' '}
@@ -36,7 +52,7 @@ export default function LoginForm({ open, setOpen, toggle }) {
               </span>
             </p>
           </div>
-        </div>
+        </Form>
       </Modal>
     </div>
   )

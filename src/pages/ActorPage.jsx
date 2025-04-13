@@ -4,6 +4,7 @@ import Footer from '../components/Footer/Footer'
 import { useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import { FetchActorId } from '../api/FetchActorId'
+import Preloader from '../components/Preloader/Preloader'
 export default function ActorPage() {
   const params = useParams()
   const id = parseInt(params.id)
@@ -15,7 +16,7 @@ export default function ActorPage() {
       <section key={id} className={styles.section}>
         <div className={`container ${styles.container}`}>
           {ActorLoading ? (
-            <p>Загрузка данных</p>
+            <Preloader />
           ) : (
             <>
               {' '}

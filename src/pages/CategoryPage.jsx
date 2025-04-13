@@ -56,32 +56,25 @@ export default function CategoryPage() {
 
   return (
     <>
-      {allGenreLoading ? (
-        <Preloader />
-      ) : (
-        <>
-          <Header />
-          <main>
-            <section className='section'>
-              <div className={`container ${styles.container}`}>
-                <h1 className={styles.title}>
-                  Добро пожаловать на Lumos - онлайн кинотеатр с более чем 960 тысячами фильмов и сериалов!
-                </h1>
-                <p className={styles.info}>По жанрам:</p>
-                <div className={styles['content-block']}>
-                  <CategorySliderButtons data={allGenreData} setState={setGenre} />
-                  {currentGenreLoading ? (
-                    <Preloader />
-                  ) : (
-                    <CategoryMovieList data={currentGenreData} ref={cotnainerRef} />
-                  )}
-                </div>
+      <>
+        <Header />
+        <main>
+          <section className='section'>
+            <div className={`container ${styles.container}`}>
+              <h1 className={styles.title}>
+                Добро пожаловать на Lumos - онлайн кинотеатр с более чем 960 тысячами фильмов и сериалов!
+              </h1>
+              <p className={styles.info}>По жанрам:</p>
+              <div className={styles['content-block']}>
+                {allGenreLoading ? null : <CategorySliderButtons data={allGenreData} setState={setGenre} />}
+
+                {currentGenreLoading ? <Preloader /> : <CategoryMovieList data={currentGenreData} ref={cotnainerRef} />}
               </div>
-            </section>
-          </main>
-          <Footer />
-        </>
-      )}
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </>
     </>
   )
 }
