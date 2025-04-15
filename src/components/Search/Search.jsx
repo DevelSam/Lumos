@@ -36,6 +36,7 @@ const Search = memo(function Search() {
             className={styles.bar}
             type='text'
             placeholder='Найти фильм...'
+            autoComplete='off'
           />
         </div>
         {queryLoading ? null : (

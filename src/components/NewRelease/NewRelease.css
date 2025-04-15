@@ -1,97 +1,92 @@
-.ReleaseSlider{
-    padding: 0 15px;
-    position: relative;
-    width: 100%
-
+.ReleaseSlider {
+  padding: 0 15px;
+  position: relative;
+  width: 100%;
 }
-.ReleaseSlider .swiper-slide{
-     width: 100%;
-
-     
+.ReleaseSlider .swiper-slide {
+  width: 100%;
 }
 
-.release-content:hover .release-name{
-    color: red;
-    transition: 0.3s;
-    opacity: 0.8;
+.release-content:hover .release-name {
+  color: red;
+  transition: 0.3s;
+  opacity: 0.8;
 }
-.release{
-    margin-bottom: 30px;
-   width: 100%;
+.release {
+  width: 100%;
 }
-.realese-container{
-    position: relative;
-     
+.realese-container {
+  position: relative;
 }
-.release-image{
-    width: 100%;
-    aspect-ratio: 4 / 4;
-    height: auto;
-    border-radius: 3px;
-    object-fit: cover;
-    cursor: pointer;
+.release-image {
+  width: 100%;
+  aspect-ratio: 4 / 4;
+  height: auto;
+  border-radius: 3px;
+  object-fit: cover;
+  cursor: pointer;
 }
-.release-title{
-    font-size: 32px;
-    margin: 0;
-   
-    font-weight: 700;
-    padding: 0;
-    padding-left: 15px;
-    position: relative;
-    color: white;
+.release-title {
+  font-size: 32px;
+  margin: 0;
+
+  font-weight: 700;
+  padding: 0;
+  padding-left: 15px;
+  position: relative;
+  color: white;
 }
 .release-button-next,
 .release-button-prev {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 1000;
-    transition: opacity 0.3s ease;
-    font-size: 80px;
-    border: none;
-    background: transparent;
-    
-    color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  font-size: 80px;
+  border: none;
+  background: transparent;
+
+  color: white;
 }
 .release-button-next,
 .release-button-prev {
-    opacity: 0;
-    transition: opacity 0.3s;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 .release:hover .release-button-next,
 .release:hover .release-button-prev {
-    opacity: 1;
+  opacity: 1;
 }
-.hidden{
-    opacity: 0 !important;
-}
-
-.release-button-next{
-    right:-30px;
+.hidden {
+  opacity: 0 !important;
 }
 
-.release-button-prev{
-    left:-30px;
+.release-button-next {
+  right: -30px;
+}
+
+.release-button-prev {
+  left: -30px;
 }
 
 .release-button-next::before {
-    right: 0;
-    border-right-color: white;
-    border-top-color: white;
-    border-bottom-color: white;
+  right: 0;
+  border-right-color: white;
+  border-top-color: white;
+  border-bottom-color: white;
 }
 
 .release-button-prev::before {
-    left: 0;
-    border-left-color: white;
-    border-top-color: white;
-    border-bottom-color: white;
+  left: 0;
+  border-left-color: white;
+  border-top-color: white;
+  border-bottom-color: white;
 }
-.release-name{
-    color: white;
-    font-size: 24px;
-    font-weight: 700;
-    transition: 0.3s;
+.release-name {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  transition: 0.3s;
 }

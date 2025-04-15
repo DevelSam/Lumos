@@ -34,7 +34,7 @@ export default function ActorPage() {
                       <li className={styles.age}>{`Возраст: ${ActorData.age} год`}</li>
                       <li
                         className={styles.birthPlace}
-                      >{`Место рождения  ${ActorData.birthPlace?.[0]?.value || 'Место рождения неизвестно'}`}</li>
+                      >{`Место рождения  ${ActorData.birthPlace?.[0]?.value || 'неизвестно'}`}</li>
                       {/* <li className={styles.all}>{`Всего фильмов ${ActorData.movies.length}`}</li> */}
                     </ul>
                   </div>

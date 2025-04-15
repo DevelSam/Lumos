@@ -20,7 +20,7 @@ export default function LoginForm({ open, setOpen, toggle }) {
   }
   return (
     <div className='header-kabinet'>
-      <div onClick={openWatchModal} className='header-kabinet__img' />
+      <div onClick={openWatchModal} className={`header-kabinet__img`} />
       <Modal isOpen={open} onClose={closeWatchModal}>
         <Form nameForm='Авторизация' onSubmit={hundleSubmit} className={styles.form}>
           <Input

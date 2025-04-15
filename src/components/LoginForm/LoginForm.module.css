@@ -32,3 +32,10 @@
   border-radius: 5px;
   font-size: 18px;
 }
+.active {
+  opacity: 1;
+}
+.modal {
+  opacity: 0;
+  transition: 0.3s all;
+}
