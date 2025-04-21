@@ -1,4 +1,4 @@
-const API_KEYS = ['8CY5Z2T-2QRM3SQ-K9CK63M-SSB8MP1']
+const API_KEYS = ['7MS4W7W-R6T4R1Z-KE64E8G-AW4MCZT']
 //'KAK5971-W7T4JWN-HJMJNXD-EMYD3KG'
 let currentKeyIndex = 0
 export const getCurrentKey = () => API_KEYS[currentKeyIndex]
