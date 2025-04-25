@@ -1,0 +1,59 @@
+.kabinet {
+  cursor: pointer;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(22, 22, 22);
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid #f5752c;
+}
+.title {
+  padding: 10px 5px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+.line {
+  width: 100%;
+}
+
+.redirect {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.authication {
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.authication span:hover {
+  color: #f5752c;
+}
+.authication span {
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s all;
+  font-weight: 500;
+  color: #8e63df;
+}
+.button {
+  width: 100%;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.error {
+  color: red;
+  font-size: 18px;
+  font-weight: 400;
+  transition: 0.3s all;
+  max-width: 350px;
+  text-align: center;
+}

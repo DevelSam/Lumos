@@ -1,0 +1,18 @@
+.Movie-slider {
+  margin-bottom: 2rem;
+}
+.button {
+  color: white;
+  width: 100%;
+  min-height: 50px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #fb5e00, #ff6f61);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  min-width: 100px;
+}

@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.text {
+  max-width: 50%;
+  line-height: 26px;
+  color: white;
+  font-size: 20px;
+}
+.title {
+  font-size: 36px;
+  color: white;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.reviews-block {
+  width: 45%;
+  display: flex;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #3b3c40;
+}
+.reviews-choice {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.reviews-choice > div {
+  display: flex;
+}
+.choice-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.choice-text {
+  font-size: 20px;
+  font-weight: 500;
+  opacity: 0.8;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+.block {
+  display: flex;
+  justify-content: space-between;
+}
+.choice-content {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+.choice-content > div {
+  display: flex;
+  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.image-positive,
+.image-negative {
+  width: 30px;
+}
+.positive,
+.negative {
+  font-size: 18px;
+  font-weight: 700;
+}
+path {
+  transition: 0.3s all;
+}

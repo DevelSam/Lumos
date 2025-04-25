@@ -1,0 +1,50 @@
+.kabinet {
+  cursor: pointer;
+}
+
+.redirect {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.registration {
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.registration span:hover {
+  color: #f5752c;
+}
+.registration span {
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s all;
+  font-weight: 500;
+  color: #8e63df;
+}
+.button {
+  width: 100%;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.active {
+  opacity: 1;
+}
+.modal {
+  opacity: 0;
+  transition: 0.3s all;
+}
+.form {
+  max-width: 30%;
+}
+.error {
+  color: red;
+  font-size: 18px;
+  font-weight: 400;
+  transition: 0.3s all;
+}

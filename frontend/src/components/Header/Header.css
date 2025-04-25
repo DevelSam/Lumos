@@ -1,0 +1,113 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 10px 0px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.595) 6.67%,
+    rgba(0, 0, 0, 0.579) 13.33%,
+    rgba(0, 0, 0, 0.551) 20%,
+    rgba(0, 0, 0, 0.512) 26.67%,
+    rgba(0, 0, 0, 0.461) 33.33%,
+    rgba(0, 0, 0, 0.401) 40%,
+    rgba(0, 0, 0, 0.334) 46.67%,
+    rgba(0, 0, 0, 0.266) 53.33%,
+    rgba(0, 0, 0, 0.199) 60%,
+    rgba(0, 0, 0, 0.139) 66.67%,
+    rgba(0, 0, 0, 0.088) 73.33%,
+    rgba(0, 0, 0, 0.049) 80%,
+    rgba(0, 0, 0, 0.021) 86.67%,
+    rgba(0, 0, 0, 0.005) 93.33%,
+    transparent
+  );
+}
+.header-list {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  list-style-type: none;
+}
+.header-list__item {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.header-list__item-link {
+  color: white;
+  opacity: 0.6;
+  transition: 0.3s ease;
+  position: relative;
+}
+.active.header-list__item-link {
+  opacity: 1;
+  color: white;
+}
+.active.header-list__item-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  opacity: 1;
+  height: 0px;
+  border-bottom: 5px solid #fb5e00;
+  background-color: #fb5e00;
+  border-radius: 85px;
+}
+.header-list__item-link:hover {
+  opacity: 1;
+  color: white;
+}
+.header-logo__link {
+  font-weight: 900;
+  color: #fb5e00;
+  font-size: 42px;
+}
+.header-logo__link:hover {
+  color: #fb5e00;
+}
+.header-kabinet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fb5e00;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(42, 44, 46, 0.5);
+
+  padding: 0.1rem;
+  overflow: hidden;
+}
+.header-kabinet__img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  transform: scale(1);
+  border-radius: 30%;
+  object-fit: cover;
+}
+.header-nav__kabinet {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.header-nav__last-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  gap: 20px;
+}
