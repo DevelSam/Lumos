@@ -1,0 +1,9 @@
+"filename", "language", "JavaScript", "XML", "JSON", "HTML", "Markdown", "comment", "blank", "total"
+"c:\Users\MIXPC\Desktop\Kino\kino\README.md", "Markdown", 0, 0, 0, 0, -5, 0, -4, -9
+"c:\Users\MIXPC\Desktop\Kino\kino\eslint.config.js", "JavaScript", -37, 0, 0, 0, 0, 0, -2, -39
+"c:\Users\MIXPC\Desktop\Kino\kino\index.html", "HTML", 0, 0, 0, -13, 0, 0, -1, -14
+"c:\Users\MIXPC\Desktop\Kino\kino\package-lock.json", "JSON", 0, 0, -4903, 0, 0, 0, -1, -4904
+"c:\Users\MIXPC\Desktop\Kino\kino\package.json", "JSON", 0, 0, -31, 0, 0, 0, -1, -32
+"c:\Users\MIXPC\Desktop\Kino\kino\public\vite.svg", "XML", 0, -1, 0, 0, 0, 0, 0, -1
+"c:\Users\MIXPC\Desktop\Kino\kino\vite.config.js", "JavaScript", -5, 0, 0, 0, 0, -1, -2, -8
+"Total", "-", -42, -1, -4934, -13, -5, -1, -11, -5007
