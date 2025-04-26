@@ -37,13 +37,13 @@ const registration = async(req, res) =>{
         const candidate = await User.findOne({name:name})
         
         if(candidate){
-            res.status(400).json({message:'Пользователь с таким данными уже существует '})
+            return res.status(400).json({message:'Пользователь с таким данными уже существует '})
         }
-        else{
-            const hashpassword = bcrypt.hashSync(password, 8)
-        const user = await User.create({name:name, password:hashpassword})
-        res.status(200).json({message:'Успешно зарегестрирован'})
-        }
+        
+        const hashpassword = bcrypt.hashSync(password, 8)
+        await User.create({name:name, password:hashpassword})
+        return res.status(200).json({message:'Успешно зарегестрирован'})
+        
         
     }
     catch(e){
