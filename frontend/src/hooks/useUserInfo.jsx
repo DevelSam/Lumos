@@ -10,7 +10,7 @@ const useUserInfo = () => {
       return 'Пользователь не авторизован'
     }
     try {
-      const response = await fetch('http://localhost:5000/api/user/info', {
+      const response = await fetch('https://lumoserver.vercel.app/api/user/info', {
         headers: { Authorization: `Bearer ${localStorage.getItem('user')}` },
       })
       const data = await response.json()
