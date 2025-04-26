@@ -25,17 +25,19 @@ export default function ProfilePage() {
           {loading ? (
             <Preloader />
           ) : (
-            <p>
-              {`Имя: ${user.name}`} {console.log(user)}
-            </p>
+            <>
+              <p>
+                {`Имя: ${user.name}`} {console.log(user)}
+              </p>
+              <button
+                onClick={handleClick}
+                className={`${styles.button} button-watch `}
+                style={{ border: 0, fontSize: 18, padding: 15 }}
+              >
+                Выйти
+              </button>
+            </>
           )}
-          <button
-            onClick={handleClick}
-            className={`${styles.button} button-watch `}
-            style={{ border: 0, fontSize: 18, padding: 15 }}
-          >
-            Выйти
-          </button>
         </div>
       </section>
       <Footer />

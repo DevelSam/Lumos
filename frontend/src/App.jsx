@@ -6,12 +6,12 @@ import { AuthProvide } from './context/AuthContext'
 function App() {
   return (
     <>
-      <AuthProvide>
-        <BrowserRouter>
-          <ScrollToTop />
+      <BrowserRouter>
+        <ScrollToTop />
+        <AuthProvide>
           <AppRouter />
-        </BrowserRouter>
-      </AuthProvide>
+        </AuthProvide>
+      </BrowserRouter>
     </>
   )
 }

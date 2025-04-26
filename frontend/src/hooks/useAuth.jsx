@@ -1,9 +1,9 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import AuthContext from '../context/AuthContext'
 
 const useAuth = () => {
   const { isAuth, setIsAuth, setUser } = useContext(AuthContext)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const login = async (userInfo) => {
     setLoading(true)
 
@@ -47,13 +47,13 @@ const useAuth = () => {
       setLoading(false)
     }
   }
-  const checkStatus = () => {
-    setLoading(true)
+  useEffect(() => {
     if (localStorage.getItem('user')) {
       setIsAuth(true)
       setLoading(false)
     }
-  }
+    setLoading(false)
+  }, [])
   const logoutUser = () => {
     if (localStorage.getItem('user')) {
       localStorage.removeItem('user')
@@ -62,6 +62,6 @@ const useAuth = () => {
       setUser('')
     }
   }
-  return { isAuth, loading, login, checkStatus, registration, logoutUser }
+  return { isAuth, loading, login, registration, logoutUser }
 }
 export default useAuth
