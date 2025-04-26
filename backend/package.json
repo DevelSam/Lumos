@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --env-file .env index.js",
-    "preinstall": "npm install bcrypt --build-from-source"
+    "preinstall": "npm install bcrypt --build-from-source",
+    "build": "build"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
