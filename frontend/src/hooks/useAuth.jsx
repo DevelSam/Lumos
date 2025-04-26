@@ -8,7 +8,7 @@ const useAuth = () => {
     setLoading(true)
 
     try {
-      const response = await fetch('https://lumoserver.vercel.app//api/user/login', {
+      const response = await fetch('https://lumoserver.vercel.app/api/user/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: userInfo.username, password: userInfo.password }),
@@ -31,7 +31,7 @@ const useAuth = () => {
   const registration = async (userInfo) => {
     setLoading(true)
     try {
-      const response = await fetch('https://lumoserver.vercel.app//api/user/registration', {
+      const response = await fetch('https://lumoserver.vercel.app/api/user/registration', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: userInfo.username, password: userInfo.password }),
