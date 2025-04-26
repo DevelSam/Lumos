@@ -39,11 +39,13 @@ const registration = async(req, res) =>{
         if(candidate){
             res.status(400).json({message:'Пользователь с таким данными уже существует '})
         }
-       
-        const hashpassword = bcrypt.hashSync(password, 8)
+        else{
+            const hashpassword = bcrypt.hashSync(password, 8)
         const user = await User.create({name:name, password:hashpassword})
         await user.save()
         res.status(200).json({message:'Успешно зарегестрирован'})
+        }
+        
     }
     catch(e){
         console.log(e)
