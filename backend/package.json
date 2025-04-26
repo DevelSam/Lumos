@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --env-file .env index.js"
+    "start": "nodemon --env-file .env index.js",
+    "preinstall": "npm install bcrypt --build-from-source"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
