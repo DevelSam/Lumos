@@ -42,7 +42,6 @@ const registration = async(req, res) =>{
         else{
             const hashpassword = bcrypt.hashSync(password, 8)
         const user = await User.create({name:name, password:hashpassword})
-        await user.save()
         res.status(200).json({message:'Успешно зарегестрирован'})
         }
         
