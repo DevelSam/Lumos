@@ -1,6 +1,7 @@
 import styles from './ActorPage.module.css'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
+import { ImageComponent } from '../components/ui/ImageComponent/ImageComponent'
 import { useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import { FetchActorId } from '../api/FetchActorId'
@@ -14,14 +15,15 @@ export default function ActorPage() {
     <>
       <Header />
       <section key={id} className={styles.section}>
+        <Preloader loading={ActorLoading} />
         <div className={`container ${styles.container}`}>
-          {ActorLoading ? (
-            <Preloader />
-          ) : (
+          {!ActorLoading && (
             <>
               {' '}
               <div className={styles.content}>
-                <img src={ActorData.photo} alt='' className={styles.photo} />
+                <div className={styles.image}>
+                  <ImageComponent src={ActorData.photo} alt='' className={styles.photo} />
+                </div>
                 <div className={styles['content-actor']}>
                   <div className={styles['name-block']}>
                     <h1 className={styles.title}>{ActorData.name}</h1>
@@ -35,7 +37,6 @@ export default function ActorPage() {
                       <li
                         className={styles.birthPlace}
                       >{`Место рождения  ${ActorData.birthPlace?.[0]?.value || 'неизвестно'}`}</li>
-                      {/* <li className={styles.all}>{`Всего фильмов ${ActorData.movies.length}`}</li> */}
                     </ul>
                   </div>
                 </div>

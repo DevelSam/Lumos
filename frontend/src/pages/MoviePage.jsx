@@ -24,9 +24,8 @@ export default function MoviePage() {
       <Header />
 
       <main className='film'>
-        {filmLoading ? (
-          <Preloader />
-        ) : (
+        <Preloader loading={filmLoading} />
+        {!filmLoading && (
           <>
             <MovieHero filmsdata={filmsdata} />
             <MovieInfo filmsdata={filmsdata} />

@@ -23,45 +23,39 @@ export default function CollectionsPage() {
   }
   return (
     <>
-      {CollectionTitleLoading ? (
-        <Preloader />
-      ) : (
-        <>
-          <Header />
-          <section className={styles.section}>
-            <div className={`container ${styles.container}`}>
-              <h1 className={styles.title}>{CollectionTitle.name}</h1>
-              <div className={styles['content-block']}>
-                {CollectionDataLoading ? (
-                  <Preloader />
-                ) : (
-                  CollectionData.docs.map((value) => (
-                    <div key={value.id} className={styles.content}>
-                      <Link to={`/film/${value.id}`}>
-                        <div className={`${styles.block} ${styles.image}`}>
-                          <ImageComponent src={value.poster?.url} alt='' />
-                        </div>
-                        {value?.rating?.imdb || value?.rating?.kp ? (
-                          <div className={styles.score}>
-                            <div className={styles['score-container']}>
-                              <span className={styles.number}>
-                                {' '}
-                                {formatRationg(value.rating.imdb || value.rating.kp)}
-                              </span>
-                            </div>
+      <Header />
+      <section className={styles.section}>
+        <Preloader loading={CollectionDataLoading} />
+        {!CollectionTitleLoading && (
+          <div className={`container ${styles.container}`}>
+            <h1 className={styles.title}>{CollectionTitle.name}</h1>
+            <div className={styles['content-block']}>
+              <Preloader loading={CollectionDataLoading} />
+              {!CollectionDataLoading &&
+                CollectionData.docs.map((value) => (
+                  <div key={value.id} className={styles.content}>
+                    <Link to={`/film/${value.id}`}>
+                      <div className={`${styles.block} ${styles.image}`}>
+                        <ImageComponent src={value.poster?.url} alt='' />
+                      </div>
+                      {value?.rating?.imdb || value?.rating?.kp ? (
+                        <div className={styles.score}>
+                          <div className={styles['score-container']}>
+                            <span className={styles.number}>
+                              {' '}
+                              {formatRationg(value.rating.imdb || value.rating.kp)}
+                            </span>
                           </div>
-                        ) : null}
-                      </Link>
-                      <p className={styles.name}>{value.name || value.alternativeName}</p>
-                    </div>
-                  ))
-                )}
-              </div>
+                        </div>
+                      ) : null}
+                    </Link>
+                    <p className={styles.name}>{value.name || value.alternativeName}</p>
+                  </div>
+                ))}
             </div>
-          </section>
-        </>
-      )}
-
+          </div>
+        )}
+      </section>
       <Footer />
     </>
   )

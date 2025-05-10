@@ -34,9 +34,8 @@ export default function MainPage() {
     <>
       <Header />
       <main>
-        {loading ? (
-          <Preloader />
-        ) : (
+        <Preloader loading={loading} />
+        {!loading && (
           <>
             {/* {console.log(randomData)} */}
             <HeroSection data={TopNowData} />

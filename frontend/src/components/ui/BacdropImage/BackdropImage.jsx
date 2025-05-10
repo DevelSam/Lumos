@@ -19,7 +19,7 @@ export const BackdropImage = ({ src, children }) => {
         backgroundImage: `url(${loaded ? src : placeholder})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        transition: 'background-image 0.5s ease-in-out',
+        transition: 'all 0.4s ',
       }}
     >
       {children}

@@ -91,3 +91,18 @@
     opacity 300ms,
     transform 300ms;
 }
+.preloader-enter {
+  opacity: 0;
+}
+.preloader-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.preloader-exit {
+  opacity: 1;
+}
+
+.preloader-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}

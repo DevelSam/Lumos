@@ -23,7 +23,7 @@ const RandomFilm = memo(function randomFilm({ data, title }) {
               <div className='random-name__block'>
                 <div className='random-rating'>
                   <p className='random-rating__numbers'>
-                    {Number.isInteger(data.rating.imdb) ? data.rating.imdb.toFixed(1) : data.rating.imdb}
+                    {Number.isInteger(data.rating?.imdb) ? data.rating.imdb.toFixed(1) : data.rating.imdb}
                   </p>
                 </div>
                 <p className='random-name'>{data.name}</p>

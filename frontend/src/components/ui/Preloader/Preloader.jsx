@@ -1,10 +1,11 @@
 import styles from './Preloader.module.css'
-
-export default function Preloader(){
-    return(
-        
-            <div className={styles.block}>
-                <p className={styles.load}>Loading...</p>
-            </div>
-    )
+import { CSSTransition } from 'react-transition-group'
+export default function Preloader({ loading }) {
+  return (
+    <CSSTransition in={loading} classNames={'preloader'} unmountOnExit timeout={500}>
+      <div className={styles.block}>
+        <div className={styles.load}></div>
+      </div>
+    </CSSTransition>
+  )
 }

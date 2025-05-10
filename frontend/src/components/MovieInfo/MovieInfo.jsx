@@ -1,23 +1,51 @@
+import useLikeFilm from '../../hooks/useLikeFilm'
 import styles from './MovieInfo.module.css'
 
-import { useState } from 'react'
-export default function MovieInfo({ filmsdata }) {
+import { useEffect, useState, memo, useCallback } from 'react'
+export default memo(function MovieInfo({ filmsdata }) {
+  const { films, deleteLikeFilms, getLikeFilms, addLikeFilms } = useLikeFilm()
   const [likes, setLikes] = useState(false)
   const [dislikes, setDislikes] = useState(false)
-
-  function handleLikes() {
-    if (dislikes) {
-      setDislikes(false)
+  useEffect(() => {
+    getLikeFilms()
+  }, [likes, dislikes])
+  useEffect(() => {
+    if (films.length > 0) {
+      console.log(`123123123123` + films)
+      films.forEach((element) => {
+        if (element.filmId == filmsdata.id) {
+          if (element.filmLike) {
+            setLikes(true)
+            setDislikes(false)
+            console.log('Пользователю нравится')
+          } else {
+            setDislikes(true)
+            setLikes(false)
+            console.log('Пользователю не нравится')
+          }
+        }
+      })
     }
-
-    setLikes(!likes)
-  }
-  function handleDislikes() {
-    if (likes) {
+  }, [films])
+  const handleLikes = useCallback(() => {
+    if (likes && !dislikes) {
+      deleteLikeFilms(filmsdata.id)
       setLikes(false)
+    } else {
+      setLikes(true)
+      addLikeFilms(filmsdata.id, true)
     }
-    setDislikes(!dislikes)
-  }
+  }, [likes])
+  const handleDislike = useCallback(() => {
+    if (!likes && dislikes) {
+      deleteLikeFilms(filmsdata.id)
+      setDislikes(false)
+    } else {
+      setDislikes(true)
+      addLikeFilms(filmsdata.id, false)
+    }
+  }, [dislikes])
+
   return (
     <section className={styles.info}>
       <div className={`container ${styles.container}`}>
@@ -48,7 +76,7 @@ export default function MovieInfo({ filmsdata }) {
                   </svg>
                   <p className={styles['positive-text']}>Мне понравилось</p>
                 </div>
-                <div className={styles.negative} onClick={() => handleDislikes()}>
+                <div className={styles.negative} onClick={() => handleDislike()}>
                   <svg
                     width={'34px'}
                     height={'30px'}
@@ -75,4 +103,4 @@ export default function MovieInfo({ filmsdata }) {
       </div>
     </section>
   )
-}
+})

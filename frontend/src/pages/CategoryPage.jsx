@@ -53,12 +53,13 @@ export default function CategoryPage() {
       if (cotnainerRef.current) observer.unobserve(cotnainerRef.current)
     }
   }, [cotnainerRef, currentGenreLoading, currentGenreData])
-
+  const loading = allGenreLoading || currentGenreLoading
   return (
     <>
       <>
         <Header />
         <main>
+          <Preloader loading={loading} />
           <section className='section'>
             <div className={`container ${styles.container}`}>
               <h1 className={styles.title}>
@@ -66,9 +67,9 @@ export default function CategoryPage() {
               </h1>
               <p className={styles.info}>По жанрам:</p>
               <div className={styles['content-block']}>
-                {allGenreLoading ? null : <CategorySliderButtons data={allGenreData} setState={setGenre} />}
+                {!allGenreLoading && <CategorySliderButtons data={allGenreData} setState={setGenre} />}
 
-                {currentGenreLoading ? <Preloader /> : <CategoryMovieList data={currentGenreData} ref={cotnainerRef} />}
+                {!currentGenreLoading && <CategoryMovieList data={currentGenreData} ref={cotnainerRef} />}
               </div>
             </div>
           </section>

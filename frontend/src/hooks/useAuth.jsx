@@ -1,6 +1,5 @@
 import { useContext, useState, useEffect } from 'react'
 import AuthContext from '../context/AuthContext'
-
 const useAuth = () => {
   const { isAuth, setIsAuth, setUser } = useContext(AuthContext)
   const [loading, setLoading] = useState(true)
@@ -8,7 +7,7 @@ const useAuth = () => {
     setLoading(true)
 
     try {
-      const response = await fetch('https://lumoserver.vercel.app/api/user/login', {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/user/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: userInfo.username, password: userInfo.password }),
@@ -30,8 +29,9 @@ const useAuth = () => {
   }
   const registration = async (userInfo) => {
     setLoading(true)
+    console.log(import.meta.env.VITE_BASE_URL)
     try {
-      const response = await fetch('https://lumoserver.vercel.app/api/user/registration', {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/user/registration`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: userInfo.username, password: userInfo.password }),

@@ -1,15 +1,27 @@
 .load {
-  background-image: linear-gradient(45deg, #e99a8b, #fb5e00);
-  font-size: 64px;
-  color: transparent;
-  background-clip: text;
+  width: 80px;
+  height: 80px;
+  border: 5px solid #e99a8b;
+  border-bottom-color: #fb5e00;
+  border-radius: 50%;
+  display: inline-block;
+  animation: mulShdSpin 1s linear infinite;
+}
+@keyframes mulShdSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .block {
   width: 100%;
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: absolute;
+  z-index: 100;
   background-color: #0f1011;
 }

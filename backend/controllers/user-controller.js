@@ -18,7 +18,7 @@ const login = async(req, res) => {
     }
     const validPassword = bcrypt.compareSync(password, candidate.password)
     if(!validPassword){
-        res.status(400).json( {message:'Пароль не верный!'})
+        res.stgatus(400).json( {message:'Пароль не верный!'})
     }
     const token = generateAccesToken(candidate._id, candidate.name)
     return res.json({token: token})
@@ -41,7 +41,8 @@ const registration = async(req, res) =>{
         }
         
         const hashpassword = bcrypt.hashSync(password, 8)
-        await User.create({name:name, password:hashpassword})
+        const user = await User.create({name:name, password:hashpassword})
+        console.log(user)
         return res.status(200).json({message:'Успешно зарегестрирован'})
         
         
@@ -54,12 +55,29 @@ const registration = async(req, res) =>{
 }
 const getUserInfo = async (req, res) => {
     try{
-        console.log('начал поиск по юзеру')
+       
         
         const user = await User.findOne({_id:req.tokenData.id}).select("-password")
+        console.log(user)
+       if(user === null){
+        return res.status(400).json({message:'Пользователь с таким данными не найден'})
+       }
        
+       return res.json(user)
+    }
+    catch(e){
+        console.log(e)
+        
+    }
+}
+const postUserInfo = async (req, res) => {
+    try{
+        const user = await User.findOneAndUpdate({_id:req.tokenData.id}, {name:req.body.name})
+       if(user === null){
+        return res.status(400).json({message:'Пользователь с таким данными не найден'})
+       }
        
-        res.json(user)
+       return res.json(user)
     }
     catch(e){
         console.log(e)
@@ -67,8 +85,9 @@ const getUserInfo = async (req, res) => {
     }
 }
 
+
 const logout = async(req, res) => {
     
 }
 
-module.exports = {login, registration, logout, getUserInfo,}
+module.exports = {login, registration, logout, getUserInfo, postUserInfo}

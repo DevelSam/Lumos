@@ -6,14 +6,8 @@ export const ImageComponent = ({ src, alt, height }) => {
     setLoaded(true)
   }
   return (
-    <div style={{ position: 'relative', width: '100%', height: `100%` }}>
-      {!loaded && (
-        <img
-          src={placeholder}
-          alt='placeholder'
-          style={{ width: '100%', height: `auto`, position: 'absolute', top: 0, left: 0 }}
-        />
-      )}
+    <div style={{ width: '100%', height: `100%` }}>
+      {!loaded && <img src={placeholder} alt='placeholder' style={{ width: '100%', height: `auto` }} />}
 
       <img
         loading='lazy'
