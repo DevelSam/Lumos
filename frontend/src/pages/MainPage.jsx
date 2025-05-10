@@ -30,6 +30,7 @@ export default function MainPage() {
     randomSerialsLoading ||
     TopNowLoading
   console.log(import.meta.env)
+  console.log(import.meta.env.VITE_BASE_URL)
   return (
     <>
       <Header />
