@@ -29,7 +29,7 @@ export default function MainPage() {
     popularLoading ||
     randomSerialsLoading ||
     TopNowLoading
-
+  console.log(import.meta.env)
   return (
     <>
       <Header />
