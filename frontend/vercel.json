@@ -1,3 +1,6 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "env": {
+    "VITE_BASE_URL": "https://lumoserver.vercel.app/api"
+  }
 }
