@@ -48,7 +48,7 @@ class UserServise {
   async getUserInfo(id) {
     const user = await User.findOne({ _id: id }).select('-password')
     if (user === null) {
-      throw new Error({ message: 'Пользователь с таким данными не найден' })
+      throw ApiError.UnauthorizetError()
     }
     return user
   }
