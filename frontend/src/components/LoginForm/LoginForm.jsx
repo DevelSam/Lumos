@@ -8,10 +8,10 @@ export default function LoginForm({ toggle }) {
   const navigate = useNavigate()
   const { login } = useAuth()
   const [error, setError] = useState()
-  const [formData, setFormData] = useState({ username: '', password: '' })
+  const [formData, setFormData] = useState({ email: '', password: '' })
   const hundleSubmit = async (e) => {
     e.preventDefault()
-    if (formData.username !== ' ' && formData.password !== ' ') {
+    if (formData.email !== ' ' && formData.password !== ' ') {
       const check = await login(formData)
       console.log(check)
       if (!check) {
@@ -26,10 +26,10 @@ export default function LoginForm({ toggle }) {
   return (
     <Form nameForm='Авторизация' onSubmit={hundleSubmit} className={styles.form}>
       <Input
-        onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         name='login'
-        label={'Логин'}
-        type='text'
+        label={'Email'}
+        type='email'
         placeholder='Логин'
         required
       />

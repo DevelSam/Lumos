@@ -97,3 +97,14 @@
   border: none;
   border-radius: 5px;
 }
+.toast {
+  min-width: 450px;
+  background-color: #3b3c40;
+  color: white;
+}
+.toast button {
+  color: white;
+}
+.toast div svg {
+  fill: white;
+}

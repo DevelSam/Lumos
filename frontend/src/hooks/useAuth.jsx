@@ -3,6 +3,13 @@ import AuthContext from '../context/AuthContext'
 const useAuth = () => {
   const { isAuth, setIsAuth, setUser } = useContext(AuthContext)
   const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    if (localStorage.getItem('user')) {
+      setIsAuth(true)
+      setLoading(false)
+    }
+    setLoading(false)
+  }, [])
   const login = async (userInfo) => {
     setLoading(true)
 
@@ -10,13 +17,13 @@ const useAuth = () => {
       const response = await fetch(`${import.meta.env.VITE_BASE_URL}/user/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: userInfo.username, password: userInfo.password }),
+        body: JSON.stringify({ email: userInfo.email, password: userInfo.password }),
       })
       const data = await response.json()
 
       if (response.ok) {
         localStorage.setItem('user', data.token)
-
+        setUser(data.user)
         setIsAuth(true)
       } else {
         return data.message
@@ -29,12 +36,12 @@ const useAuth = () => {
   }
   const registration = async (userInfo) => {
     setLoading(true)
-    console.log(import.meta.env.VITE_BASE_URL)
+
     try {
       const response = await fetch(`${import.meta.env.VITE_BASE_URL}/user/registration`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: userInfo.username, password: userInfo.password }),
+        body: JSON.stringify({ email: userInfo.email, name: userInfo.name, password: userInfo.password }),
       })
       const data = await response.json()
       console.log(data)
@@ -47,13 +54,7 @@ const useAuth = () => {
       setLoading(false)
     }
   }
-  useEffect(() => {
-    if (localStorage.getItem('user')) {
-      setIsAuth(true)
-      setLoading(false)
-    }
-    setLoading(false)
-  }, [])
+
   const logoutUser = () => {
     if (localStorage.getItem('user')) {
       localStorage.removeItem('user')
@@ -62,6 +63,27 @@ const useAuth = () => {
       setUser('')
     }
   }
-  return { isAuth, loading, login, registration, logoutUser }
+  const checkAuth = async () => {
+    setLoading(true)
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/user/info`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('user')}` },
+      })
+      const data = await response.json()
+      if (response.status === 401) {
+        logoutUser()
+      }
+      if (response.ok) {
+        setIsAuth(true)
+        setUser(data)
+      }
+    } catch (e) {
+      console.log(e)
+    } finally {
+      setLoading(false)
+    }
+  }
+  return { isAuth, checkAuth, loading, login, registration, logoutUser }
 }
 export default useAuth

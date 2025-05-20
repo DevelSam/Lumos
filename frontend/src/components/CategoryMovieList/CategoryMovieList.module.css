@@ -33,6 +33,7 @@
 }
 .content {
   max-width: 350px;
+  width: 25%;
   flex-grow: 1;
   aspect-ratio: 3/4;
   height: auto;

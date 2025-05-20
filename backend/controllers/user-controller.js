@@ -1,93 +1,52 @@
-const User = require('../models/user-model')
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
-const process = require('process')
+const UserServise = require('../service/user-service.js')
 
-const generateAccesToken = (id, name) => {
-    const payload = {id, name}
-
-    return jwt.sign(payload, process.env.JWT_SECRET_KEY, {expiresIn:'30d'})
-}
-const login = async(req, res) => {
-    try{
-    const {name, password} = req.body
-    const candidate = await User.findOne({name})
-    
-    if(!candidate){
-        res.status(400).json( {message:'Пользователя не существует '})
+class UserController {
+  async login(req, res, next) {
+    try {
+      const { email, password } = req.body
+      const data = await UserServise.login(email, password)
+      return res.json(data)
+    } catch (e) {
+      next(e)
     }
-    const validPassword = bcrypt.compareSync(password, candidate.password)
-    if(!validPassword){
-        res.stgatus(400).json( {message:'Пароль не верный!'})
+  }
+  async registration(req, res, next) {
+    try {
+      const { email, name, password } = req.body
+      const user = await UserServise.registration(email, name, password)
+      res.status(200).json(user)
+    } catch (e) {
+      next(e)
     }
-    const token = generateAccesToken(candidate._id, candidate.name)
-    return res.json({token: token})
+  }
+  async getUserInfo(req, res, next) {
+    try {
+      const id = req.tokenData.id
+      const user = await UserServise.getUserInfo(id)
+      return res.json(user)
+    } catch (e) {
+      next(e)
     }
-    catch(e){
-        console.log(e)
-        res.status(400).json({message: 'Ошибка регистрации '})
+  }
+  async postUserInfo(req, res, next) {
+    try {
+      const name = req.body.name
+      const id = req.tokenData.id
+      const user = await UserServise.postUserInfo(id, name)
+      return res.json(user)
+    } catch (e) {
+      next(e)
     }
-}
-const registration = async(req, res) =>{
-    const {name, password} = req.body
-    if(name === ' ' || password === ' '){
-        res.status(400).json({message: 'Ошибка Все поля должны быть заполнены'})
+  }
+  async activate(req, res, next) {
+    try {
+      const activateLink = req.params.link
+      await UserServise.activate(activateLink)
+      res.redirect(process.env.CLIENT_URL)
+    } catch (e) {
+      next(e)
     }
-    try{
-        const candidate = await User.findOne({name:name})
-        
-        if(candidate){
-            return res.status(400).json({message:'Пользователь с таким данными уже существует '})
-        }
-        
-        const hashpassword = bcrypt.hashSync(password, 8)
-        const user = await User.create({name:name, password:hashpassword})
-        console.log(user)
-        return res.status(200).json({message:'Успешно зарегестрирован'})
-        
-        
-    }
-    catch(e){
-        console.log(e)
-        res.status(400).json({message: 'Ошибка регистрации '})
-    }
-    
-}
-const getUserInfo = async (req, res) => {
-    try{
-       
-        
-        const user = await User.findOne({_id:req.tokenData.id}).select("-password")
-        console.log(user)
-       if(user === null){
-        return res.status(400).json({message:'Пользователь с таким данными не найден'})
-       }
-       
-       return res.json(user)
-    }
-    catch(e){
-        console.log(e)
-        
-    }
-}
-const postUserInfo = async (req, res) => {
-    try{
-        const user = await User.findOneAndUpdate({_id:req.tokenData.id}, {name:req.body.name})
-       if(user === null){
-        return res.status(400).json({message:'Пользователь с таким данными не найден'})
-       }
-       
-       return res.json(user)
-    }
-    catch(e){
-        console.log(e)
-        
-    }
+  }
 }
 
-
-const logout = async(req, res) => {
-    
-}
-
-module.exports = {login, registration, logout, getUserInfo, postUserInfo}
+module.exports = new UserController()

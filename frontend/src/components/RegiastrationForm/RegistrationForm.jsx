@@ -6,7 +6,7 @@ import { useState } from 'react'
 export default function RegistrationForm({ toggle }) {
   const { registration } = useAuth()
   const [error, setError] = useState()
-  const [formData, setFormData] = useState({ username: '', password: '', repassword: '' })
+  const [formData, setFormData] = useState({ email: '', name: '', password: '', repassword: '' })
   const hundleSubmit = async (e) => {
     e.preventDefault()
     if (formData.password == formData.repassword) {
@@ -25,11 +25,19 @@ export default function RegistrationForm({ toggle }) {
     <Form onSubmit={hundleSubmit} nameForm='Регистрация'>
       <Input
         name='login'
-        label={'Логин'}
-        type='text'
+        label={'Email'}
+        type='email'
         placeholder='Логин'
         required
-        onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+      />
+      <Input
+        name='name'
+        label={'Имя'}
+        type='text'
+        placeholder='Иван'
+        required
+        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
       />
       <Input
         name='password'

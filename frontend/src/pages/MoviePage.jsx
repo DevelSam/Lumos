@@ -16,9 +16,9 @@ import Preloader from '../components/ui/Preloader/Preloader'
 export default function MoviePage() {
   const params = useParams()
   const id = parseInt(params.id)
-  console.log(id)
+
   const { data: filmsdata, isLoading: filmLoading } = useQuery(['filmdata', id], () => FetchFilmId(id))
-  console.log(filmsdata)
+
   return (
     <>
       <Header />

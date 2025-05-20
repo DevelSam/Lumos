@@ -6,34 +6,36 @@ import Preloader from '../components/ui/Preloader/Preloader'
 import useAuth from '../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
 import styles from './ProfilePage.module.css'
-import { useQuery } from 'react-query'
+
 import AuthContext from '../context/AuthContext'
-import useUserData from '../hooks/useUserData'
+
 import UserQuestions from '../components/UserQuestions/UserQuestions'
+
 export default function ProfilePage() {
   const { logoutUser } = useAuth()
-  const { getUserInfo } = useUserData()
   const navigate = useNavigate()
-  const { user } = useContext(AuthContext)
-  const { isLoading: load } = useQuery('userInfo', () => getUserInfo())
+  const { user, loading } = useContext(AuthContext)
   const handleClick = () => {
     logoutUser()
     navigate('/auth')
   }
+
   return (
     <>
       <Header />
-      <Preloader loading={load} />
+      <Preloader loading={loading} />
       <section className='section'>
+        <h1 className={styles.title}>Профиль</h1>
         <div className={`container ${styles.container}`}>
-          {!load && (
+          {!loading && (
             <>
-              <p>
-                {`Имя: ${user.name}`} {console.log(user)}
-              </p>
+              <div className={styles.info}>
+                <span>{`Ваше имя:`}</span>
+                <span>{user.name}</span>
+              </div>
               <UserQuestions />
               <button onClick={handleClick} className={`${styles.button} button-watch `}>
-                Выйти
+                Выйти из аккаунта
               </button>
             </>
           )}

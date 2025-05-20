@@ -45,7 +45,7 @@ export default function Header() {
         </nav>
         <div className='header-nav__last-block'>
           <Search />
-          <button className={`${styles['button-tarif']} button-watch `}>Выбрать тариф</button>
+          {/* <button className={`${styles['button-tarif']} button-watch `}>Выбрать тариф</button> */}
           <Link to={isAuth ? '/profile' : '/auth'}>
             {/* <nav className='header-nav__kabinet'>
               <div className='header-kabinet'>

@@ -1,15 +1,17 @@
 import { useEffect } from 'react'
 import useUserQuestion from '../../hooks/useQuestion'
+import styles from './UserQuestions.module.css'
 export default function UserQuestions() {
-  const { getQuestions, questions, deleteQuestion, l } = useUserQuestion()
+  const { getQuestions, questions, deleteQuestion } = useUserQuestion()
   useEffect(() => {
     getQuestions()
   }, [])
   return (
-    <div>
+    <>
+      <h1 className={styles.title}>Ваши вопросы</h1>
       {questions.length > 0 ? (
         questions.map((question) => (
-          <ul key={question._id}>
+          <ul className={styles.list} key={question._id}>
             <li>
               <span>{question.questionText}</span>
               <span>{question.createAt}</span>
@@ -20,8 +22,8 @@ export default function UserQuestions() {
           </ul>
         ))
       ) : (
-        <p>У пользователя нет вопросов</p>
+        <p>У вас нет вопросов</p>
       )}
-    </div>
+    </>
   )
 }

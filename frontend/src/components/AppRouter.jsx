@@ -9,11 +9,14 @@ import { Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
 import RequireAuth from './PrivateRoute/RequireAuth'
 import ProfilePage from '../pages/ProfilePage'
-import Preloader from './ui/Preloader/Preloader'
 
 export default function AppRouter() {
-  // const {  } = useContext(AuthContext)
-
+  const { checkAuth } = useAuth()
+  useEffect(() => {
+    if (localStorage.getItem('user')) {
+      checkAuth()
+    }
+  }, [])
   return (
     <>
       <Routes>

@@ -1,18 +1,26 @@
 import styles from './MovieHero.module.css'
 import Modal from '../ui/Modal/Modal'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import { BackdropImage } from '../ui/BacdropImage/BackdropImage'
+import AuthContext from '../../context/AuthContext'
+import { ToastContainer, toast } from 'react-toastify'
 export default function MovieHero({ filmsdata }) {
+  const { user } = useContext(AuthContext)
   const [isWatchModalOpen, setIsWatchModalOpen] = useState(false)
   const [isTrailerModalOpen, setIsTrailerModalOpen] = useState(false)
   const hasTrailer = filmsdata.videos && filmsdata.videos.trailers && filmsdata.videos.trailers.length > 0
 
   const openWatchModal = () => {
-    setIsWatchModalOpen(true)
-    document.body.classList.add('unscroll')
+    if (user.isActive) {
+      setIsWatchModalOpen(true)
+      document.body.classList.add('unscroll')
+    } else {
+      notify()
+    }
   }
-
+  const notify = () =>
+    toast.info('Для просмотра фильма активируйте аккаунт', { position: 'top-center', className: styles.toast })
   const closeWatchModal = () => {
     setIsWatchModalOpen(false)
     document.body.classList.remove('unscroll')
@@ -29,7 +37,6 @@ export default function MovieHero({ filmsdata }) {
   }
   return (
     <section className={styles.section}>
-      {console.log(filmsdata)}
       <div className={`container`}>
         <BackdropImage key={filmsdata.id} src={filmsdata.backdrop?.url} className={styles.content}>
           <div className={styles['text-block']}>
@@ -75,6 +82,7 @@ export default function MovieHero({ filmsdata }) {
           </div>
         </BackdropImage>
       </div>
+      <ToastContainer pauseOnHover={false} />
     </section>
   )
 }
