@@ -38,7 +38,11 @@ class UserServise {
     const activationLink = crypto.randomUUID()
     const user = await User.create({ email: email, name: name, password: hashpassword, linkActivate: activationLink })
 
-    await mailerService.sendActivationMail(email, `${process.env.API_URL}/api/user/activate/` + activationLink)
+    const mailSend = await mailerService.sendActivationMail(
+      email,
+      `${process.env.API_URL}/api/user/activate/` + activationLink,
+    )
+    console.log(mailSend)
     const userDto = new UserDto(user)
     const token = await TokenService.generateAccesToken({ ...userDto })
     await TokenService.saveToken(userDto.id, token)
