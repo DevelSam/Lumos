@@ -12,7 +12,7 @@ class MailerService {
   async sendActivationMail(to, link) {
     console.log(link)
     console.log(to)
-    this.transporter.sendMail({
+    await this.transporter.sendMail({
       from: process.env.SMTP_USER,
       to,
       subject: 'Активация аккаунта на сайте ' + process.env.CLIENT_URL,
