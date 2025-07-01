@@ -39,12 +39,26 @@
   opacity: 0;
   transition: 0.3s all;
 }
-.form {
-  max-width: 30%;
-}
+
 .error {
   color: red;
   font-size: 18px;
   font-weight: 400;
   transition: 0.3s all;
+}
+@media (max-width: 480px) {
+  .redirect {
+    text-align: center;
+    white-space: nowrap;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+
+  .form {
+    padding: 20px 10px;
+    max-width: 340px;
+  }
+  .form input {
+    max-width: 250px;
+  }
 }

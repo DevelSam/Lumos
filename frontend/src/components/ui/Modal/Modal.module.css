@@ -70,10 +70,7 @@
 }
 @media (max-width: 568px) {
   .content {
-    max-width: 440px;
-    min-height: 400px;
-  }
-  .container {
+    max-width: 320px;
     min-height: 400px;
   }
 }

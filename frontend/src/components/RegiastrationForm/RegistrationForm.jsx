@@ -22,7 +22,7 @@ export default function RegistrationForm({ toggle }) {
     }
   }
   return (
-    <Form onSubmit={hundleSubmit} nameForm='Регистрация'>
+    <Form className={styles.form} onSubmit={hundleSubmit} nameForm='Регистрация'>
       <Input
         name='login'
         label={'Email'}

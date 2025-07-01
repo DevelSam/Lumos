@@ -57,3 +57,12 @@
   max-width: 350px;
   text-align: center;
 }
+@media (max-width: 480px) {
+  .authication {
+    text-align: center;
+    white-space: nowrap;
+  }
+  .form {
+    padding: 20px 10px;
+  }
+}
