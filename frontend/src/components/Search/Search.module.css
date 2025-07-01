@@ -83,11 +83,15 @@ input {
 @media (max-width: 1280px) {
   .search {
     position: relative;
+    z-index: 10;
   }
   .list {
     top: 50px;
   }
   .list li {
     max-height: 80px;
+  }
+  #search {
+    z-index: 10;
   }
 }
