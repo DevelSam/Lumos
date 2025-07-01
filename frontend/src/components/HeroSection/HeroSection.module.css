@@ -48,7 +48,7 @@
   content: '';
   background: linear-gradient(to bottom, rgba(19, 20, 20, 0.2), #0f1011);
 
-  height: 93vh;
+  height: 95vh;
   width: 100%;
   top: 0;
   left: 0;
@@ -58,6 +58,7 @@
 
 .container {
   height: 93vh;
+  min-height: 600px;
   z-index: 2;
   position: relative;
 }
@@ -66,6 +67,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
+
   height: 100%;
   align-items: center;
   text-align: center;
@@ -125,4 +127,44 @@
   transform: scale(1.05);
   background-color: rgba(31, 31, 31, 0.9);
   transition: 0.3s ease;
+}
+@media (max-width: 960px) {
+  .container {
+    max-height: 650px;
+  }
+  .hero {
+    height: auto;
+  }
+  .description {
+    font-size: 22px;
+  }
+  .title {
+    font-size: 48px;
+  }
+  .watch-button {
+    padding: 20px;
+    font-size: 1rem;
+  }
+  .description-button {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .description {
+    font-size: 18px;
+  }
+  .title {
+    font-size: 38px;
+  }
+  .controls {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .controls a {
+    width: 100%;
+  }
+  .controls button {
+    width: 100%;
+  }
 }

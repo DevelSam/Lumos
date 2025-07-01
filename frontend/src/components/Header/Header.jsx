@@ -1,60 +1,82 @@
-import './Header.css'
 import { NavLink, Link } from 'react-router-dom'
 import Search from '../Search/Search'
 import styles from './Header.module.css'
 import useAuth from '../../hooks/useAuth'
+import { useEffect, useState } from 'react'
 export default function Header() {
   const { isAuth } = useAuth()
+  const [active, SetIsActive] = useState(false)
+  useEffect(() => {
+    if (active) {
+      document.body.classList.add('unscroll')
+    } else {
+      document.body.classList.remove('unscroll')
+    }
 
+    return () => {
+      document.body.classList.remove('unscroll')
+    }
+  }, [active])
   return (
-    <header className='header'>
-      <div className='container header-container'>
-        <div className='header-logo__block'>
-          <NavLink className='header-logo__link' to='/'>
+    <header className={styles.header}>
+      <div className={`container ${styles.container}`}>
+        <div className={styles['logo-block']}>
+          <NavLink className={styles['logo-link']} to='/'>
             Lumos
           </NavLink>
         </div>
-        <nav className='header-nav'>
-          <ul className='header-list'>
-            <NavLink
-              //   activeClassName={'active'}
-              className={({ isActive }) => (isActive ? 'active' : '') + ' header-list__item-link'}
-              to='/'
-            >
-              <li className='header-list__item'>Главная</li>
-            </NavLink>
-            <NavLink
-              className={({ isActive }) => (isActive ? 'active' : '') + ' header-list__item-link'}
-              to='/movies/movie'
-            >
-              <li className='header-list__item'>Фильмы</li>
-            </NavLink>
-            <NavLink
-              className={({ isActive }) => (isActive ? 'active' : '') + ' header-list__item-link'}
-              to='/movies/tv-series'
-            >
-              <li className='header-list__item'>Cериалы</li>
-            </NavLink>
-            <NavLink
-              className={({ isActive }) => (isActive ? 'active' : '') + ' header-list__item-link'}
-              to='/category'
-            >
-              <li className='header-list__item'>Категории</li>
-            </NavLink>
-          </ul>
-        </nav>
-        <div className='header-nav__last-block'>
-          <Search />
-          {/* <button className={`${styles['button-tarif']} button-watch `}>Выбрать тариф</button> */}
-          <Link to={isAuth ? '/profile' : '/auth'}>
-            {/* <nav className='header-nav__kabinet'>
+        <div className={styles.burger}>
+          <span
+            onClick={() => SetIsActive(!active)}
+            className={`${styles['burger-line']} ${active ? styles.activeBurger : ' '} `}
+          ></span>
+        </div>
+        <div className={`${styles.content}  ${active ? styles.activeBurger : ' '}`}>
+          <nav className={styles.nav}>
+            <ul className={styles.list}>
+              <NavLink
+                //   activeClassName={'active'}
+                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles['item-link']}`}
+                to='/'
+              >
+                <li className={styles.item}>Главная</li>
+              </NavLink>
+              <NavLink
+                onClick={() => SetIsActive(false)}
+                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles['item-link']}`}
+                to='/movies/movie'
+              >
+                <li className={styles.item}>Фильмы</li>
+              </NavLink>
+              <NavLink
+                onClick={() => SetIsActive(false)}
+                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles['item-link']}`}
+                to='/movies/tv-series'
+              >
+                <li className={styles.item}>Cериалы</li>
+              </NavLink>
+              <NavLink
+                onClick={() => SetIsActive(false)}
+                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles['item-link']}`}
+                to='/category'
+              >
+                <li className={styles.item}>Категории</li>
+              </NavLink>
+            </ul>
+          </nav>
+          <div className={styles['search-block']}>
+            <Search />
+            {/* <button className={`${styles['button-tarif']} button-watch `}>Выбрать тариф</button> */}
+            <Link to={isAuth ? '/profile' : '/auth'}>
+              {/* <nav className='header-nav__kabinet'>
               <div className='header-kabinet'>
                 <img className='header-kabinet__img' src={iconUser} alt='' />
               </div>
               
             </nav> */}
-            <button className={`button-watch ${styles.button}`}>{isAuth ? 'Профиль' : 'Войти'}</button>
-          </Link>
+              <button className={`button-watch ${styles.button}`}>{isAuth ? 'Профиль' : 'Войти'}</button>
+            </Link>
+          </div>
         </div>
       </div>
     </header>

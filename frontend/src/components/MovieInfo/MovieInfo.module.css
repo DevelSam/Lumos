@@ -75,3 +75,42 @@
 path {
   transition: 0.3s all;
 }
+@media (max-width: 1280px) {
+  .choice-content {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+@media (max-width: 768px) {
+  .choice-content {
+    flex-direction: row;
+    align-items: start;
+  }
+  .block {
+    flex-direction: column;
+  }
+  .text {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .reviews-block {
+    width: 100%;
+  }
+}
+@media (max-width: 568px) {
+  .choice-content {
+    flex-direction: column;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .text {
+    font-size: 16px;
+  }
+  .choice-title {
+    font-size: 24px;
+  }
+  .choice-text {
+    font-size: 16px;
+  }
+}

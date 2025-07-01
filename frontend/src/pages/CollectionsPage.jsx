@@ -1,5 +1,3 @@
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
 import { Link, useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import styles from './CollectionsPage.module.css'
@@ -7,6 +5,7 @@ import Preloader from '../components/ui/Preloader/Preloader'
 import { ImageComponent } from '../components/ui/ImageComponent/ImageComponent'
 import { FetchCollectionMovies } from '../api/FetchCollectionMovies'
 import { FetchCollection } from '../api/FetchCollection'
+import Layout from '../components/ui/Layout/Layout'
 export default function CollectionsPage() {
   const query = useParams()
   const collection = query.list
@@ -22,8 +21,7 @@ export default function CollectionsPage() {
     return Number.isInteger(rating) ? rating.toFixed(1) : rating.toFixed(1)
   }
   return (
-    <>
-      <Header />
+    <Layout>
       <section className={styles.section}>
         <Preloader loading={CollectionDataLoading} />
         {!CollectionTitleLoading && (
@@ -56,7 +54,6 @@ export default function CollectionsPage() {
           </div>
         )}
       </section>
-      <Footer />
-    </>
+    </Layout>
   )
 }

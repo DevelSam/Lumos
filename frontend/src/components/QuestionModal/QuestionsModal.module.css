@@ -1,0 +1,8 @@
+.form {
+  height: auto;
+  padding: 30px 20px;
+  justify-content: start;
+}
+.form input {
+  min-width: 200px;
+}

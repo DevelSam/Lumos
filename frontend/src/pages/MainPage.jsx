@@ -1,5 +1,4 @@
 import HeroSection from '../components/HeroSection/HeroSection'
-import Header from '../components/Header/Header'
 import KinoSlider from '../components/KinoSlider/KinoSlider'
 import RandomFilm from '../components/RandomFilm/RandomFilm'
 
@@ -10,9 +9,9 @@ import { FetchWaitFilms } from '../api/FetchWaitFilms'
 import { FetchPopular } from '../api/FetchPopular'
 import { FetchRandomSerials } from '../api/FetchRandomSerials'
 import { FetchTopNow } from '../api/FetchTopNow'
-import Footer from '../components/Footer/Footer'
 import { useQuery } from 'react-query'
 import Preloader from '../components/ui/Preloader/Preloader'
+import Layout from '../components/ui/Layout/Layout'
 export default function MainPage() {
   const { data: topFilmsData, isLoading: topFilmsLoading } = useQuery('topFilms', FetchTopFilms)
   const { data: randomFilmsData, isLoading: randomFilmsLoading } = useQuery('randomFilms', FetchRandomFilm)
@@ -31,8 +30,7 @@ export default function MainPage() {
     TopNowLoading
   return (
     <>
-      <Header />
-      <main>
+      <Layout>
         <Preloader loading={loading} />
         {!loading && (
           <>
@@ -47,8 +45,7 @@ export default function MainPage() {
             <RandomFilm data={randomSerialsData} title={'Рандомный сериал с оценкой 8+'} />
           </>
         )}
-      </main>
-      <Footer />
+      </Layout>
     </>
   )
 }

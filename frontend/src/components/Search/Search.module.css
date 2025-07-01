@@ -80,3 +80,14 @@ input {
   left: 0;
   transition: all 0.3s;
 }
+@media (max-width: 1280px) {
+  .search {
+    position: relative;
+  }
+  .list {
+    top: 50px;
+  }
+  .list li {
+    max-height: 80px;
+  }
+}

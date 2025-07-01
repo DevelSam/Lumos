@@ -80,3 +80,48 @@
   object-fit: cover;
   cursor: pointer;
 }
+@media (max-width: 1280px) {
+  .content {
+    max-width: 350px;
+    width: auto;
+    flex-grow: 1;
+    aspect-ratio: 3/4;
+    height: auto;
+    gap: 20px;
+    position: relative;
+  }
+}
+@media (max-width: 760px) {
+  .content {
+    max-width: 250px;
+  }
+  .block div img {
+    min-height: 350px;
+  }
+  .block {
+    min-height: 350px;
+  }
+}
+@media (max-width: 568px) {
+  .content {
+    max-width: 250px;
+  }
+  .block div img {
+    min-height: auto;
+  }
+  .name {
+    font-size: 16px;
+  }
+  .block {
+    min-height: auto;
+  }
+  .content {
+    max-width: 47%;
+    width: auto;
+    flex-grow: 1;
+    aspect-ratio: 3/4;
+    height: auto;
+    gap: 20px;
+    position: relative;
+  }
+}

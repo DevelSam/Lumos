@@ -16,3 +16,8 @@
 .title {
   font-size: 24px;
 }
+@media (max-width: 568px) {
+  .list li {
+    flex-direction: column;
+  }
+}

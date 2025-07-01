@@ -11,7 +11,7 @@
   height: auto;
   position: relative;
   z-index: 0;
-  margin-bottom: 6rem;
+  margin-bottom: 1rem;
   border-radius: 5px;
 }
 .content::after {
@@ -107,4 +107,98 @@
 }
 .toast div svg {
   fill: white;
+}
+@media (max-width: 1280px) {
+  .text-block {
+    max-width: 60%;
+  }
+  .random-content {
+    height: 60vh;
+  }
+}
+@media (max-width: 768px) {
+  .text-block {
+    max-width: 70%;
+    padding: 10px;
+    min-height: 50vh;
+  }
+  .content {
+    height: 50vh;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .description {
+    font-size: 16px;
+  }
+}
+@media (max-width: 568px) {
+  .text-block {
+    max-width: 90%;
+    padding: 15px;
+    min-height: 40vh;
+  }
+  .content {
+    min-height: 40vh;
+    margin-bottom: 0;
+  }
+  .section {
+    padding-bottom: 0;
+  }
+  .title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .description {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .info-block {
+    display: none;
+    margin-bottom: 15px;
+  }
+  .button-block {
+    display: block;
+    align-items: start;
+    max-width: 300px;
+  }
+  .button-trailer {
+    padding: 15px 20px;
+    font-size: 14px;
+    max-width: 200px;
+  }
+  .button-watch {
+    max-width: 250px;
+    padding: 15px 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 1280px) {
+  .iframe {
+    width: 640px;
+    height: 480px;
+  }
+}
+@media (max-width: 768px) {
+  .iframe {
+    width: 480px;
+    height: 480px;
+  }
+}
+@media (max-width: 568px) {
+  .iframe {
+    width: 400px;
+    height: 500px;
+  }
+  .iframe .content {
+    width: 420px;
+    height: 480px;
+  }
+}
+@media (max-width: 480px) {
+  .iframe {
+    width: 320px;
+    height: 500px;
+  }
 }

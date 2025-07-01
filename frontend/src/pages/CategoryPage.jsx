@@ -5,13 +5,12 @@ import { useInfiniteQuery, useQuery } from 'react-query'
 import { FetchAllGenre } from '../api/FetchAllGenre'
 
 import Preloader from '../components/ui/Preloader/Preloader'
-import Footer from '../components/Footer/Footer'
-import Header from '../components/Header/Header'
 import styles from './CategoryPage.module.css'
 import { FetchCurrentGenre } from '../api/FetchCurrentGenre'
 import { useState, useRef, useEffect } from 'react'
 import CategorySliderButtons from '../components/CategorySliderButtons/CategorySliderButtons'
 import CategoryMovieList from '../components/CategoryMovieList/CategoryMovieList'
+import Layout from '../components/ui/Layout/Layout'
 export default function CategoryPage() {
   // const navigate = useNavigate();
   const param = useParams()
@@ -55,27 +54,21 @@ export default function CategoryPage() {
   }, [cotnainerRef, currentGenreLoading, currentGenreData])
   const loading = allGenreLoading || currentGenreLoading
   return (
-    <>
-      <>
-        <Header />
-        <main>
-          <Preloader loading={loading} />
-          <section className='section'>
-            <div className={`container ${styles.container}`}>
-              <h1 className={styles.title}>
-                Добро пожаловать на Lumos - онлайн кинотеатр с более чем 960 тысячами фильмов и сериалов!
-              </h1>
-              <p className={styles.info}>По жанрам:</p>
-              <div className={styles['content-block']}>
-                {!allGenreLoading && <CategorySliderButtons data={allGenreData} setState={setGenre} />}
+    <Layout>
+      <Preloader loading={loading} />
+      <section className={styles.section}>
+        <div className={`container ${styles.container}`}>
+          <h1 className={styles.title}>
+            Добро пожаловать на Lumos - онлайн кинотеатр с более чем 960 тысячами фильмов и сериалов!
+          </h1>
+          <p className={styles.info}>По жанрам:</p>
+          <div className={styles['content-block']}>
+            {!allGenreLoading && <CategorySliderButtons data={allGenreData} setState={setGenre} />}
 
-                {!currentGenreLoading && <CategoryMovieList data={currentGenreData} ref={cotnainerRef} />}
-              </div>
-            </div>
-          </section>
-        </main>
-        <Footer />
-      </>
-    </>
+            {!currentGenreLoading && <CategoryMovieList data={currentGenreData} ref={cotnainerRef} />}
+          </div>
+        </div>
+      </section>
+    </Layout>
   )
 }

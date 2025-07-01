@@ -68,3 +68,12 @@
 .close:hover::before {
   background-color: #dd5515;
 }
+@media (max-width: 568px) {
+  .content {
+    max-width: 440px;
+    min-height: 400px;
+  }
+  .container {
+    min-height: 400px;
+  }
+}

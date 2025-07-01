@@ -18,6 +18,32 @@ export default function MovieActor({ filmsdata }) {
           spaceBetween={30}
           slidesPerView={6}
           speed={800}
+          breakpoints={{
+            320: {
+              slidesPerView: 2,
+            },
+            380: {
+              slidesPerView: 2,
+            },
+            480: {
+              slidesPerView: 3,
+            },
+            640: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 4,
+            },
+            960: {
+              slidesPerView: 4,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+            1440: {
+              slidesPerView: 6,
+            },
+          }}
         >
           {ArrActor.map((data) => (
             <SwiperSlide key={data.id}>

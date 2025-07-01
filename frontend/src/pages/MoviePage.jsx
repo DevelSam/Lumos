@@ -6,12 +6,12 @@ import MovieHero from '../components/MovieHero/MovieHero'
 
 import 'swiper/css'
 import 'swiper/css/bundle'
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
+
 import MovieInfo from '../components/MovieInfo/MovieInfo'
 import MovieActor from '../components/MovieActor/MovieActor'
 import MovieSimular from '../components/MovieSimular/MovieSimular'
 import Preloader from '../components/ui/Preloader/Preloader'
+import Layout from '../components/ui/Layout/Layout'
 
 export default function MoviePage() {
   const params = useParams()
@@ -20,21 +20,16 @@ export default function MoviePage() {
   const { data: filmsdata, isLoading: filmLoading } = useQuery(['filmdata', id], () => FetchFilmId(id))
 
   return (
-    <>
-      <Header />
-
-      <main className='film'>
-        <Preloader loading={filmLoading} />
-        {!filmLoading && (
-          <>
-            <MovieHero filmsdata={filmsdata} />
-            <MovieInfo filmsdata={filmsdata} />
-            <MovieActor filmsdata={filmsdata} />
-            <MovieSimular data={filmsdata} />
-          </>
-        )}
-      </main>
-      <Footer />
-    </>
+    <Layout>
+      <Preloader loading={filmLoading} />
+      {!filmLoading && (
+        <>
+          <MovieHero filmsdata={filmsdata} />
+          <MovieInfo filmsdata={filmsdata} />
+          <MovieActor filmsdata={filmsdata} />
+          <MovieSimular data={filmsdata} />
+        </>
+      )}
+    </Layout>
   )
 }

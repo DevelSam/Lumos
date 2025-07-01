@@ -26,9 +26,35 @@ const KinoSlider = memo(function kino({ data, title, collection }) {
           spaceBetween={30}
           speed={800}
           // breakpoints={}
-          slidesPerView={5}
+          slidesPerView={4}
           style={{
-            height: 'auto', // Резиновая высота контейнера
+            height: 'auto',
+          }}
+          breakpoints={{
+            320: {
+              slidesPerView: 2,
+            },
+            380: {
+              slidesPerView: 2,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            960: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 4,
+            },
+            1440: {
+              slidesPerView: 5,
+            },
           }}
         >
           {data.docs.map((movie) => (

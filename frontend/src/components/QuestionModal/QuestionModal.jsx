@@ -1,5 +1,6 @@
 import Modal from '../ui/Modal/Modal'
 import Input from '../ui/Input/Input'
+import styles from './QuestionsModal.module.css'
 import Form from '../ui/Form/Form'
 import { memo, useState } from 'react'
 import useUserQuestion from '../../hooks/useQuestion'
@@ -28,8 +29,8 @@ const QuestionsModal = memo(function QuestiosnModal({ open, setOpen }) {
     }
   }
   return (
-    <Modal isOpen={open} onClose={hundleClose}>
-      <Form onSubmit={hundleSubmit} nameForm='Задать вопрос'>
+    <Modal c isOpen={open} onClose={hundleClose}>
+      <Form className={styles.form} onSubmit={hundleSubmit} nameForm='Задать вопрос'>
         {/* <Input placeholder='Имя' name='name' label='Имя' required /> */}
         <Input
           onChange={(e) => setText(e.target.value)}

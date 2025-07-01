@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import placeholder from '../../../assets/Placeholder.svg'
-export const BackdropImage = ({ src, children }) => {
+export const BackdropImage = ({ className, src, children }) => {
   const [loaded, setLoading] = useState(false)
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const BackdropImage = ({ src, children }) => {
   }
   return (
     <div
-      className={`random-content ${loaded ? 'loaded' : ''}`}
+      className={`random-content ${loaded ? 'loaded' : ''} ${className}`}
       style={{
         backgroundImage: `url(${loaded ? src : placeholder})`,
         backgroundSize: 'cover',

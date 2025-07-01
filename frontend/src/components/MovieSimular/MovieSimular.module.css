@@ -3,6 +3,7 @@
   font-size: 24px;
   font-weight: 700;
   transition: 0.3s;
+  padding-top: 5px;
 }
 .content {
   position: relative;
@@ -92,4 +93,62 @@
   color: white;
   font-size: 18px;
   font-weight: 700;
+}
+@media (max-width: 960px) {
+  .title {
+    font-size: 24px;
+  }
+  .image {
+    min-height: 350px;
+    max-height: 350px;
+  }
+  .block {
+    min-height: 350px;
+    max-height: 350px;
+  }
+  .score-container {
+    font-size: 16px;
+  }
+  .name {
+    font-size: 22px;
+  }
+  .button {
+    background-color: red;
+    border: 1px solid red;
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+  .title-container {
+    margin-bottom: 10px;
+  }
+  .title-container > h2 {
+    width: 60%;
+  }
+}
+@media (max-width: 480px) {
+  .image {
+    min-height: 250px;
+    max-height: 250px;
+  }
+  .block {
+    min-height: 250px;
+    max-height: 250px;
+  }
+  .name {
+    font-size: 14px;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .score-container {
+    background-color: #fb5e00;
+    position: absolute;
+    left: 10px;
+    border-radius: 5px;
+    top: 15px;
+    padding: 3px 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+  }
 }

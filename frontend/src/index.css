@@ -55,3 +55,8 @@ h3 {
 section {
   padding: 0 0 4rem 0;
 }
+@media (max-width: 680px) {
+  section {
+    padding-bottom: 2rem;
+  }
+}

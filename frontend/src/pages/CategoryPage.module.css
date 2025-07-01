@@ -32,3 +32,13 @@
 .link {
   max-width: 120px;
 }
+.section {
+  padding-top: 8rem;
+}
+@media (max-width: 1280px) {
+  .title {
+    max-width: 100%;
+  }
+  .button {
+  }
+}

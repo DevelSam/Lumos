@@ -1,6 +1,4 @@
 import { useContext } from 'react'
-import Footer from '../components/Footer/Footer'
-import Header from '../components/Header/Header'
 
 import Preloader from '../components/ui/Preloader/Preloader'
 import useAuth from '../hooks/useAuth'
@@ -10,6 +8,7 @@ import styles from './ProfilePage.module.css'
 import AuthContext from '../context/AuthContext'
 
 import UserQuestions from '../components/UserQuestions/UserQuestions'
+import Layout from '../components/ui/Layout/Layout'
 
 export default function ProfilePage() {
   const { logoutUser } = useAuth()
@@ -21,10 +20,9 @@ export default function ProfilePage() {
   }
 
   return (
-    <>
-      <Header />
+    <Layout>
       <Preloader loading={loading} />
-      <section className='section'>
+      <section className={styles.section}>
         <h1 className={styles.title}>Профиль</h1>
         <div className={`container ${styles.container}`}>
           {!loading && (
@@ -41,7 +39,6 @@ export default function ProfilePage() {
           )}
         </div>
       </section>
-      <Footer />
-    </>
+    </Layout>
   )
 }
