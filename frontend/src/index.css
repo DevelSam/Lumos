@@ -28,6 +28,7 @@ body {
   position: relative;
   margin: 0;
   z-index: 10000;
+
   background-color: #0f1011;
   /* background:
     radial-gradient(circle at 10% 90%, rgba(251, 94, 0, 0.1) 0%, transparent 30%),
@@ -54,8 +55,11 @@ h3 {
 }
 section {
   padding: 0 0 4rem 0;
+  color: white;
 }
-
+button {
+  color: white;
+}
 @media (max-width: 680px) {
   section {
     padding-bottom: 2rem;
