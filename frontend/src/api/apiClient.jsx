@@ -7,6 +7,6 @@ export const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    'X-API-KEY': 'KAK5971-W7T4JWN-HJMJNXD-EMYD3KG',
+    'X-API-KEY': '7MS4W7W-R6T4R1Z-KE64E8G-AW4MCZT',
   },
 }

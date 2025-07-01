@@ -26,9 +26,11 @@ input {
   background-repeat: no-repeat;
   outline: none;
   text-indent: 0px;
+  position: absolute;
 }
 .bar:focus {
   outline: 2px solid #fd6529;
+  z-index: 100;
 }
 .bar:focus body {
   overflow: hidden;
