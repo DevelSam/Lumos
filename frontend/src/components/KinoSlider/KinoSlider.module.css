@@ -93,13 +93,12 @@
 .button {
   padding: 10px 20px;
   border: 1px solid white;
-  background-color: transparent;
+  background: transparent;
   color: white;
   font-size: 18px;
   font-weight: 700;
   border-radius: 50px;
   transition: 0.4s;
-  cursor: pointer;
 }
 .button:hover {
   background-color: red;

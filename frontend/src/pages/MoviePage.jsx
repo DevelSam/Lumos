@@ -2,7 +2,6 @@ import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 import { FetchFilmId } from '../api/FetchFilmId'
 import MovieHero from '../components/MovieHero/MovieHero'
-// import { Link } from "react-router-dom"
 
 import 'swiper/css'
 import 'swiper/css/bundle'

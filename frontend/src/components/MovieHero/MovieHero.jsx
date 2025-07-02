@@ -2,9 +2,11 @@ import styles from './MovieHero.module.css'
 import Modal from '../ui/Modal/Modal'
 import { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
-import { BackdropImage } from '../ui/BacdropImage/BackdropImage'
+import { BackdropImage } from '../ui/BackdropImage/BackdropImage'
 import AuthContext from '../../context/AuthContext'
 import { ToastContainer, toast } from 'react-toastify'
+import Button from '../ui/Button/Button'
+import FormatRating from '../../utils/FormatRating'
 export default function MovieHero({ filmsdata }) {
   const { user } = useContext(AuthContext)
   const [isWatchModalOpen, setIsWatchModalOpen] = useState(false)
@@ -41,7 +43,7 @@ export default function MovieHero({ filmsdata }) {
         <BackdropImage key={filmsdata.id} src={filmsdata.backdrop?.url} className={styles.content}>
           <div className={styles['text-block']}>
             <div className={styles['info-block']}>
-              <p className={styles.rating}>{filmsdata.rating.imdb}</p>
+              <p className={styles.rating}>{FormatRating(filmsdata?.rating?.kp)}</p>
               <p className={styles.genres}>{filmsdata.genres ? filmsdata.genres[0].name : null}</p>
               <p className={styles.year}>{filmsdata.year}</p>
               <p className={styles.country}>{filmsdata.countries[0].name ? filmsdata.countries[0].name : null}</p>
@@ -49,9 +51,9 @@ export default function MovieHero({ filmsdata }) {
             <p className={styles.title}>{filmsdata.name}</p>
             <p className={styles.description}>{filmsdata.shortDescription}</p>
             <div className={styles['button-block']}>
-              <button className={`${styles['button-watch']} button-watch button`} onClick={openWatchModal}>
+              <Button className={styles.buttonWatch} onClick={openWatchModal}>
                 {filmsdata.type === 'movie' ? 'Смотреть фильм' : 'Смотреть сериал'}
-              </button>
+              </Button>
               <Modal isOpen={isWatchModalOpen} onClose={closeWatchModal}>
                 <iframe
                   className={styles.iframe}
@@ -63,9 +65,9 @@ export default function MovieHero({ filmsdata }) {
               </Modal>
               {hasTrailer ? (
                 <>
-                  <button onClick={openTrailerModal} className={`${styles['button-trailer']} button-trailer button`}>
+                  <Button type='secondary' onClick={openTrailerModal} className={styles.buttonTrailer}>
                     Трейлер
-                  </button>
+                  </Button>
 
                   <Modal isOpen={isTrailerModalOpen} onClose={closeTrailerModal}>
                     <iframe

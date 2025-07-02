@@ -12,34 +12,28 @@ export default function FilmsGenre() {
   )
 
   return (
-    <>
-      <div className={`${styles.container}`}>
-        {currentGenreLoading ? (
-          `123`
-        ) : (
-          <>
-            {currentGenreData.docs.map((movie) => (
-              <>
-                <div key={movie.id} className={styles.content}>
-                  <Link to={`/film/${movie.id}`}>
-                    <div className={styles.block}>
-                      <ImageComponent height='450px' src={movie.poster?.url} className={styles.image} alt='' />
-                    </div>
-                    {movie.rating.imdb || movie.rating.kp ? (
-                      <div className={styles.score}>
-                        <div className={styles['score-container']}>
-                          {/* <span className={styles.number}> { formatRationg(movie.rating.imdb || movie.rating.kp)}</span> */}
-                        </div>
-                      </div>
-                    ) : null}
-                  </Link>
-                  <p className={styles.name}>{movie.name}</p>
+    <div className={`${styles.container}`}>
+      {currentGenreLoading ? null : (
+        <>
+          {currentGenreData.docs.map((movie) => (
+            <div key={movie.id} className={styles.content}>
+              <Link to={`/film/${movie.id}`}>
+                <div className={styles.block}>
+                  <ImageComponent height='450px' src={movie.poster?.url} className={styles.image} alt='' />
                 </div>
-              </>
-            ))}
-          </>
-        )}
-      </div>
-    </>
+                {movie.rating.imdb || movie.rating.kp ? (
+                  <div className={styles.score}>
+                    <div className={styles.scoreContainer}>
+                      {/* <span className={styles.number}> { formatRationg(movie.rating.imdb || movie.rating.kp)}</span> */}
+                    </div>
+                  </div>
+                ) : null}
+              </Link>
+              <p className={styles.name}>{movie.name}</p>
+            </div>
+          ))}
+        </>
+      )}
+    </div>
   )
 }

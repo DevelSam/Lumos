@@ -8,7 +8,7 @@ export const FetchSearch = async (query) => {
 
     return await res.json()
   } catch (err) {
-    console.error(err)
-    throw err
+    console.log(err)
+    throw new Error()
   }
 }

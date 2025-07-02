@@ -1,3 +1,4 @@
+import Button from '../Button/Button'
 import styles from './Form.module.css'
 
 const Form = ({ className, onSubmit, children, nameForm }) => {
@@ -7,9 +8,9 @@ const Form = ({ className, onSubmit, children, nameForm }) => {
       <hr className={styles.line} />
       <form onSubmit={onSubmit} className={`${styles.form} ${className}`}>
         {children}
-        <button className={`hero-watch__button ${styles.button}`} type='submit'>
+        <Button className={styles.button} type='primary'>
           Отправить
-        </button>
+        </Button>
       </form>
     </div>
   )

@@ -73,4 +73,7 @@
     max-width: 320px;
     min-height: 400px;
   }
+  .close {
+    right: -5px;
+  }
 }

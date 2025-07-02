@@ -1,4 +1,4 @@
-.random-content {
+.content {
   background-color: #3b3c40;
   width: 100%;
   color: white;
@@ -13,10 +13,10 @@
   z-index: 0;
   border-radius: 5px;
 }
-.random-content::after {
+
+.content::after {
   content: '';
   background: linear-gradient(to right, rgb(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-
   height: 100%;
   width: 100%;
   top: 0;
@@ -24,10 +24,12 @@
   position: absolute;
   z-index: 1;
 }
-.random {
+
+.container {
   min-height: 550px;
 }
-.random-rating {
+
+.rating {
   padding: 5px 10px;
   z-index: 2;
   border-radius: 5px;
@@ -36,7 +38,8 @@
   font-size: 18px;
   font-weight: 700;
 }
-.random-name__block {
+
+.nameBlock {
   display: flex;
   gap: 30px;
   align-items: center;
@@ -44,31 +47,38 @@
   z-index: 2;
   position: relative;
 }
-.random-description {
+
+.description {
   font-size: 20px;
   font-weight: 400;
   position: relative;
   z-index: 2;
 }
-.random-name {
+
+.name {
   font-size: 32px;
   font-weight: 700;
 }
-.random-button__block {
+
+.buttonBlock {
   flex-grow: 1;
   align-content: flex-end;
 }
-.random-button {
+
+.button {
   border: none;
   border-radius: 60px;
   width: 100%;
+  font-size: 18px;
+  padding: 20px 20px;
   max-width: 80%;
   color: #e4e4e4;
   z-index: 2;
   position: relative;
   cursor: pointer;
 }
-.random-text__block {
+
+.textBlock {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -76,66 +86,70 @@
   padding: 40px;
   min-height: 70vh;
   background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-  border-radius: 5px;
+  border-radius: 0;
   height: auto;
 }
-.random-title {
+
+.title {
   color: white;
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 30px;
 }
+
 @media (max-width: 1280px) {
-  .random-text__block {
+  .textBlock {
     font-size: 16px;
     padding: 20px;
   }
 }
+
 @media (max-width: 960px) {
-  .random-content {
+  .content {
     min-height: 350px;
   }
-  .random-description {
+  .description {
     font-size: 16px;
   }
-  .random-name {
+  .name {
     font-size: 28px;
   }
-  .random-button {
+  .button {
     font-size: 16px;
     padding: 20px;
   }
-  .random-text__block {
+  .textBlock {
     min-width: 60%;
   }
 }
+
 @media (max-width: 480px) {
-  .random {
+  .container {
     display: block;
     height: auto;
     min-height: auto;
   }
-  .random-content {
+  .content {
     max-height: 300px;
   }
 
-  .random-description {
+  .description {
     font-size: 14px;
   }
-  .random-name {
+  .name {
     font-size: 20px;
     line-height: 24px;
   }
-  .random-text__block {
+  .textBlock {
     min-width: 100%;
   }
-  .random-text__block {
+  .textBlock {
     min-height: 300px;
   }
-  .random-title {
+  .title {
     font-size: 24px;
   }
-  .random-button {
+  .button {
     font-size: 14px;
     max-width: 70%;
   }

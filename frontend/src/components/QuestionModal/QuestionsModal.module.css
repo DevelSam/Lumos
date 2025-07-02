@@ -6,3 +6,6 @@
 .form input {
   min-width: 200px;
 }
+.form button {
+  padding: 20px;
+}

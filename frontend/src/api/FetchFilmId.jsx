@@ -8,8 +8,8 @@ export const FetchFilmId = async (id) => {
     }
 
     return await response.json()
-  } catch (error) {
-    console.error('Error fetching movies:', error)
-    throw error
+  } catch (err) {
+    console.log(err)
+    throw new Error()
   }
 }

@@ -1,11 +1,11 @@
 import styles from './ActorPage.module.css'
 
-import { ImageComponent } from '../components/ui/ImageComponent/ImageComponent'
+import { ImageComponent } from '../../components/ui/ImageComponent/ImageComponent'
 import { useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
-import { FetchActorId } from '../api/FetchActorId'
-import Preloader from '../components/ui/Preloader/Preloader'
-import Layout from '../components/ui/Layout/Layout'
+import { FetchActorId } from '../../api/FetchActorId'
+import Preloader from '../../components/ui/Preloader/Preloader'
+import Layout from '../../components/ui/Layout/Layout'
 export default function ActorPage() {
   const params = useParams()
   const id = parseInt(params.id)

@@ -34,7 +34,6 @@ export default function MainPage() {
         <Preloader loading={loading} />
         {!loading && (
           <>
-            {/* {console.log(randomData)} */}
             <HeroSection data={TopNowData} />
             <KinoSlider data={topFilmsData} title={'Лучшие фильмы'} collection={'top250'} />
             <KinoSlider data={topSerialsData} title={'Лучшие Сериалы'} collection={'series-top250'} />

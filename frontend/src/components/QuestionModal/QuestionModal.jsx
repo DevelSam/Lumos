@@ -31,7 +31,6 @@ const QuestionsModal = memo(function QuestiosnModal({ open, setOpen }) {
   return (
     <Modal c isOpen={open} onClose={hundleClose}>
       <Form className={styles.form} onSubmit={hundleSubmit} nameForm='Задать вопрос'>
-        {/* <Input placeholder='Имя' name='name' label='Имя' required /> */}
         <Input
           onChange={(e) => setText(e.target.value)}
           minLength={8}

@@ -7,17 +7,16 @@ import 'swiper/css'
 import 'swiper/css/bundle'
 
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import Button from '../ui/Button/Button'
+import FormatRating from '../../utils/FormatRating'
 const KinoSlider = memo(function kino({ data, title, collection }) {
-  function formatRationg(rating) {
-    return Number.isInteger(rating) ? rating.toFixed(1) : rating.toFixed(1)
-  }
   return (
     <section className={styles.kino}>
       <div className={`container ${styles.container}`}>
         <div className={styles[`title-container`]}>
           <h2 className={styles.title}>{title}</h2>
           <Link to={`/collections/${collection}`}>
-            <button className={styles.button}>Смотреть все</button>
+            <Button className={styles.button}>Смотреть все</Button>
           </Link>
         </div>
         <Swiper
@@ -67,7 +66,7 @@ const KinoSlider = memo(function kino({ data, title, collection }) {
                   {movie.rating.imdb || movie.rating.kp ? (
                     <div className={styles.score}>
                       <div className={styles[`score-container`]}>
-                        <span className={styles.number}> {formatRationg(movie.rating.imdb || movie.rating.kp)}</span>
+                        <span className={styles.number}> {FormatRating(movie.rating.imdb || movie.rating.kp)}</span>
                       </div>
                     </div>
                   ) : null}

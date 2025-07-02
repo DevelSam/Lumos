@@ -2,15 +2,15 @@ import { useParams } from 'react-router-dom'
 // import { useNavigate} from "react-router-dom";
 import { useInfiniteQuery, useQuery } from 'react-query'
 // import { ImageComponent } from '../components/ImageComponent/ImageComponent'
-import { FetchAllGenre } from '../api/FetchAllGenre'
+import { FetchAllGenre } from '../../api/FetchAllGenre'
 
-import Preloader from '../components/ui/Preloader/Preloader'
+import Preloader from '../../components/ui/Preloader/Preloader'
 import styles from './CategoryPage.module.css'
-import { FetchCurrentGenre } from '../api/FetchCurrentGenre'
+import { FetchCurrentGenre } from '../../api/FetchCurrentGenre'
 import { useState, useRef, useEffect } from 'react'
-import CategorySliderButtons from '../components/CategorySliderButtons/CategorySliderButtons'
-import CategoryMovieList from '../components/CategoryMovieList/CategoryMovieList'
-import Layout from '../components/ui/Layout/Layout'
+import CategorySliderButtons from '../../components/CategorySliderButtons/CategorySliderButtons'
+import CategoryMovieList from '../../components/CategoryMovieList/CategoryMovieList'
+import Layout from '../../components/ui/Layout/Layout'
 export default function CategoryPage() {
   // const navigate = useNavigate();
   const param = useParams()

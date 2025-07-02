@@ -38,15 +38,18 @@
   justify-content: flex-end;
   align-items: center;
 }
-.button-watch {
+.buttonWatch {
   width: 100%;
+  font-size: 18px;
+  padding: 20px;
   margin-bottom: 1.5rem;
 }
 .watch-link {
   width: 100%;
 }
-.button-trailer {
+.buttonTrailer {
   padding: 20px 40px;
+  font-size: 18px;
   width: 80%;
 }
 .info-block p {
@@ -162,12 +165,12 @@
     align-items: start;
     max-width: 300px;
   }
-  .button-trailer {
+  .buttonTrailer {
     padding: 15px 20px;
     font-size: 14px;
     max-width: 200px;
   }
-  .button-watch {
+  .buttonWatch {
     max-width: 250px;
     padding: 15px 20px;
     font-size: 14px;
@@ -200,5 +203,11 @@
   .iframe {
     width: 320px;
     height: 500px;
+  }
+  .description {
+    margin-bottom: 15px;
+  }
+  .toast {
+    min-width: none;
   }
 }

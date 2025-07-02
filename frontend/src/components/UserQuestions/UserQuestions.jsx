@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import useUserQuestion from '../../hooks/useQuestion'
 import styles from './UserQuestions.module.css'
+import Button from '../ui/Button/Button'
 export default function UserQuestions() {
   const { getQuestions, questions, deleteQuestion } = useUserQuestion()
   useEffect(() => {
@@ -15,9 +16,9 @@ export default function UserQuestions() {
             <li>
               <span>{question.questionText}</span>
               <span>{question.createAt}</span>
-              <button onClick={() => deleteQuestion(question._id)} className={` button-watch `}>
+              <Button onClick={() => deleteQuestion(question._id)} className={styles.button} type='secondary'>
                 удалить
-              </button>
+              </Button>
             </li>
           </ul>
         ))

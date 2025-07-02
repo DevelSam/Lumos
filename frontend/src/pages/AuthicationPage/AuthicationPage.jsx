@@ -1,10 +1,10 @@
-import LoginForm from '../components/LoginForm/LoginForm'
-import RegistrationForm from '../components/RegiastrationForm/RegistrationForm'
+import LoginForm from '../../components/LoginForm/LoginForm'
+import RegistrationForm from '../../components/RegiastrationForm/RegistrationForm'
 import { useState } from 'react'
 import styles from './AuthicationPage.module.css'
 
-import background from '../assets/9405c291.jpg'
-import Layout from '../components/ui/Layout/Layout'
+import background from '../../assets/9405c291.jpg'
+import Layout from '../../components/ui/Layout/Layout'
 export default function AuthicationPage() {
   const [showLogin, setShowLogin] = useState(true)
 

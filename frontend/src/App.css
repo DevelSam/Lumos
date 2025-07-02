@@ -3,7 +3,7 @@
   padding-right: 6rem;
   margin: 0 auto;
 }
-.button {
+/* .button {
   border-radius: 100px;
   border: none;
   color: white;
@@ -40,11 +40,11 @@
   transform: scale(1.05);
   background-color: rgba(31, 31, 31, 0.9);
   transition: 0.3s ease;
-}
+} */
 .unscroll {
   overflow: hidden;
 }
-.hero-watch__button {
+/* .hero-watch__button {
   background: linear-gradient(45deg, #fb5e00, #ff6f61);
   font-size: 18px;
   font-weight: 700;
@@ -62,7 +62,7 @@
 .hero-watch__button:hover {
   transform: scale(1.05);
   transition: 0.3s ease;
-}
+} */
 .section {
   padding: 8rem;
 }

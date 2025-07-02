@@ -1,14 +1,15 @@
 import { useContext } from 'react'
 
-import Preloader from '../components/ui/Preloader/Preloader'
-import useAuth from '../hooks/useAuth'
+import Preloader from '../../components/ui/Preloader/Preloader'
+import useAuth from '../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
 import styles from './ProfilePage.module.css'
 
-import AuthContext from '../context/AuthContext'
+import AuthContext from '../../context/AuthContext'
 
-import UserQuestions from '../components/UserQuestions/UserQuestions'
-import Layout from '../components/ui/Layout/Layout'
+import UserQuestions from '../../components/UserQuestions/UserQuestions'
+import Layout from '../../components/ui/Layout/Layout'
+import Button from '../../components/ui/Button/Button'
 
 export default function ProfilePage() {
   const { logoutUser } = useAuth()
@@ -32,9 +33,9 @@ export default function ProfilePage() {
                 <span>{user.name}</span>
               </div>
               <UserQuestions />
-              <button onClick={handleClick} className={`${styles.button} button-watch `}>
+              <Button onClick={handleClick} className={styles.button} type='primary'>
                 Выйти из аккаунта
-              </button>
+              </Button>
             </>
           )}
         </div>

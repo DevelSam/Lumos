@@ -10,6 +10,7 @@ export const FetchAllGenre = async () => {
     }
     return response.json()
   } catch (err) {
-    throw (err, console.error(`Ошибка ` + err))
+    console.log(err)
+    throw new Error()
   }
 }

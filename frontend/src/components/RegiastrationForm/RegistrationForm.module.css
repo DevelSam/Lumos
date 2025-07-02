@@ -44,8 +44,9 @@
   font-weight: 500;
   color: #8e63df;
 }
-.button {
+.form > button {
   width: 100%;
+  padding: 20px;
   border-radius: 5px;
   font-size: 18px;
 }

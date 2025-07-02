@@ -13,6 +13,7 @@ export const FetchCollectionMovies = async (list) => {
 
     return await response.json()
   } catch (err) {
-    console.log(err, 'Ошибка запроса')
+    console.log(err)
+    throw new Error()
   }
 }

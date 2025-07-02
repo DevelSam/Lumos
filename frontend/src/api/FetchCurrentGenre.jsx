@@ -9,7 +9,8 @@ export const FetchCurrentGenre = async (genre, type, page) => {
       throw new Error()
     }
     return await response.json()
-  } catch (error) {
-    throw (error, console.log(error))
+  } catch (err) {
+    console.log(err)
+    throw new Error()
   }
 }

@@ -3,6 +3,7 @@ import Search from '../Search/Search'
 import styles from './Header.module.css'
 import useAuth from '../../hooks/useAuth'
 import { useEffect, useState } from 'react'
+import Button from '../ui/Button/Button'
 export default function Header() {
   const { isAuth } = useAuth()
   const [active, SetIsActive] = useState(false)
@@ -20,15 +21,15 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
-        <div className={styles['logo-block']}>
-          <NavLink className={styles['logo-link']} to='/'>
+        <div className={styles.logoBlock}>
+          <NavLink className={styles.logoLink} to='/'>
             Lumos
           </NavLink>
         </div>
         <div className={styles.burger}>
           <span
             onClick={() => SetIsActive(!active)}
-            className={`${styles['burger-line']} ${active ? styles.activeBurger : ' '} `}
+            className={`${styles.burgerLine} ${active ? styles.activeBurger : ' '} `}
           ></span>
         </div>
         <div className={`${styles.content}  ${active ? styles.activeBurger : ' '}`}>
@@ -36,35 +37,35 @@ export default function Header() {
             <ul className={styles.list}>
               <NavLink
                 //   activeClassName={'active'}
-                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles['item-link']}`}
+                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles.itemLink}`}
                 to='/'
               >
                 <li className={styles.item}>Главная</li>
               </NavLink>
               <NavLink
                 onClick={() => SetIsActive(false)}
-                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles['item-link']}`}
+                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles.itemLink}`}
                 to='/movies/movie'
               >
                 <li className={styles.item}>Фильмы</li>
               </NavLink>
               <NavLink
                 onClick={() => SetIsActive(false)}
-                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles['item-link']}`}
+                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles.itemLink}`}
                 to='/movies/tv-series'
               >
                 <li className={styles.item}>Cериалы</li>
               </NavLink>
               <NavLink
                 onClick={() => SetIsActive(false)}
-                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles['item-link']}`}
+                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles.itemLink}`}
                 to='/category'
               >
                 <li className={styles.item}>Категории</li>
               </NavLink>
             </ul>
           </nav>
-          <div className={styles['search-block']}>
+          <div className={styles.searchBlock}>
             <Search />
             {/* <button className={`${styles['button-tarif']} button-watch `}>Выбрать тариф</button> */}
             <Link to={isAuth ? '/profile' : '/auth'}>
@@ -74,7 +75,9 @@ export default function Header() {
               </div>
               
             </nav> */}
-              <button className={`button-watch ${styles.button}`}>{isAuth ? 'Профиль' : 'Войти'}</button>
+              <Button className={styles.button} type='primary'>
+                {isAuth ? 'Профиль' : 'Войти'}
+              </Button>
             </Link>
           </div>
         </div>

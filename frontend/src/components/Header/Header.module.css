@@ -43,7 +43,7 @@
   font-size: 18px;
 }
 
-.item-link {
+.itemLink {
   color: white;
   opacity: 0.6;
   transition: 0.3s ease;
@@ -81,20 +81,20 @@
   background-color: #fb5e00;
   border-radius: 85px;
 }
-.item-link:hover {
+.itemLink:hover {
   opacity: 1;
   color: white;
 }
-.logo-link {
+.logoLink {
   font-weight: 900;
   color: #fb5e00;
   font-size: 42px;
 }
-.logo-link:hover {
+.logoLink:hover {
   color: #fb5e00;
 }
 
-.search-block {
+.searchBlock {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -107,6 +107,7 @@
   border: none;
   font-size: 14px;
   padding: 15px 30px;
+
   cursor: pointer;
   opacity: 0.98;
 }
@@ -146,7 +147,7 @@
     height: 40px;
     overflow-x: hidden;
   }
-  .burger-line {
+  .burgerLine {
     transition: 0.5s all;
     position: relative;
     width: 36px;
@@ -155,7 +156,7 @@
     height: 2px;
     background-color: #fb5e00;
   }
-  .burger-line::after {
+  .burgerLine::after {
     transition: 0.5s all;
     content: ' ';
     position: absolute;
@@ -167,7 +168,7 @@
     height: 2px;
     background-color: #fb5e00;
   }
-  .burger-line::before {
+  .burgerLine::before {
     transition: 0.5s all;
     content: ' ';
     position: absolute;
@@ -194,7 +195,7 @@
     width: 100%;
     height: 100%;
   }
-  .search-block {
+  .searchBlock {
     flex-direction: column;
   }
   .content.activeBurger {
@@ -206,21 +207,21 @@
     flex-direction: column;
   }
 
-  .burger-line.activeBurger {
+  .burgerLine.activeBurger {
     display: block;
     width: 0;
 
     height: 0;
     padding-top: 10px;
   }
-  .burger-line.activeBurger::after {
+  .burgerLine.activeBurger::after {
     rotate: -45deg;
     opacity: 1;
 
     top: 20px;
     left: 0;
   }
-  .burger-line.activeBurger::before {
+  .burgerLine.activeBurger::before {
     rotate: 45deg;
     top: 20px;
     left: 0;

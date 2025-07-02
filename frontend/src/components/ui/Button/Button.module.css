@@ -1,0 +1,35 @@
+.secondary {
+  background-color: rgba(31, 31, 31, 0.95);
+  padding: 24px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: 0.3s ease;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.secondary:hover {
+  transform: scale(1.05);
+  background-color: rgba(31, 31, 31, 0.9);
+  transition: 0.3s ease;
+}
+
+.primary {
+  background: linear-gradient(45deg, #fb5e00, #ff6f61);
+  border-radius: 30px;
+  font-weight: 700;
+  width: 100%;
+  transform: scale(1);
+  transition: 0.5s ease;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+}
+.primary:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}

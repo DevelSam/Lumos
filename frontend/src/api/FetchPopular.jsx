@@ -11,8 +11,8 @@ export const FetchPopular = async () => {
       throw new Error('Запрос не сработал!')
     }
     return await response.json()
-  } catch (error) {
-    console.error('Error fetching movies:', error)
-    throw error
+  } catch (err) {
+    console.log(err)
+    throw new Error()
   }
 }

@@ -12,7 +12,7 @@ export const FetchWaitFilms = async () => {
 
     return await response.json()
   } catch (err) {
-    console.error('Ошибка запроса!', err)
-    throw err
+    console.log(err)
+    throw new Error()
   }
 }

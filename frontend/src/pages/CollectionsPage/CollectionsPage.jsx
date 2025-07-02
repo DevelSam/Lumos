@@ -1,11 +1,12 @@
 import { Link, useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import styles from './CollectionsPage.module.css'
-import Preloader from '../components/ui/Preloader/Preloader'
-import { ImageComponent } from '../components/ui/ImageComponent/ImageComponent'
-import { FetchCollectionMovies } from '../api/FetchCollectionMovies'
-import { FetchCollection } from '../api/FetchCollection'
-import Layout from '../components/ui/Layout/Layout'
+import Preloader from '../../components/ui/Preloader/Preloader'
+import { ImageComponent } from '../../components/ui/ImageComponent/ImageComponent'
+import { FetchCollectionMovies } from '../../api/FetchCollectionMovies'
+import { FetchCollection } from '../../api/FetchCollection'
+import Layout from '../../components/ui/Layout/Layout'
+import FormatRating from '../../utils/FormatRating'
 export default function CollectionsPage() {
   const query = useParams()
   const collection = query.list
@@ -16,10 +17,6 @@ export default function CollectionsPage() {
   const { data: CollectionTitle, isLoading: CollectionTitleLoading } = useQuery(['CollectionTitle', collection], () =>
     FetchCollection(collection),
   )
-
-  function formatRationg(rating) {
-    return Number.isInteger(rating) ? rating.toFixed(1) : rating.toFixed(1)
-  }
   return (
     <Layout>
       <section className={styles.section}>
@@ -39,10 +36,7 @@ export default function CollectionsPage() {
                       {value?.rating?.imdb || value?.rating?.kp ? (
                         <div className={styles.score}>
                           <div className={styles['score-container']}>
-                            <span className={styles.number}>
-                              {' '}
-                              {formatRationg(value.rating.imdb || value.rating.kp)}
-                            </span>
+                            <span className={styles.number}>{FormatRating(value.rating.imdb || value.rating.kp)}</span>
                           </div>
                         </div>
                       ) : null}

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import styles from './MovieSimular.module.css'
 import 'swiper/css'
 import 'swiper/css/bundle'
+import FormatRating from '../../utils/FormatRating'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Link } from 'react-router-dom'
@@ -9,9 +10,6 @@ export default function MovieSimular({ data }) {
   const hasSimilarMovies = data?.similarMovies?.length > 0
   if (!hasSimilarMovies) {
     return null
-  }
-  function formatRationg(rating) {
-    return Number.isInteger(rating) ? rating.toFixed(1) : rating.toFixed(1)
   }
   return (
     <section className={styles.section}>
@@ -62,10 +60,7 @@ export default function MovieSimular({ data }) {
                       {movie.rating?.imdb || movie.rating?.kp ? (
                         <div className={styles.score}>
                           <div className={styles['score-container']}>
-                            <span className={styles.numbers}>
-                              {' '}
-                              {formatRationg(movie.rating.imdb || movie.rating.kp)}
-                            </span>
+                            <span className={styles.numbers}>{FormatRating(movie.rating.imdb || movie.rating.kp)}</span>
                           </div>
                         </div>
                       ) : null}

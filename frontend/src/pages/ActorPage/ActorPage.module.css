@@ -57,3 +57,19 @@
   list-style-type: none;
   font-size: 18px;
 }
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+  .info-block {
+    font-size: 14px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+}
