@@ -38,5 +38,5 @@ API будет доступно на http://localhost:5000
 ### С MongoDB на локальной машине:
 ```bash 
 docker build -t lumos-backend .
-docker run -p 5000:5000 --add-host=host.docker.internal:host-gateway lumos-backend
+docker run -p 5000:5000 lumos-backend
 ```
