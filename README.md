@@ -19,10 +19,10 @@
 React • React Router • React Query • Vite • CSS.Modules  
 
 **Backend**  
-Express.js • MongoDB • JWT • Nodemailer • Mongoose  
+Express.js • MongoDB • JWT • Nodemailer • Mongoose • Docker 
 
 **Инструменты**  
-Postman • Figma • Git  
+Postman • Figma • Git
 
 ## 🚀 Быстрый старт
 
