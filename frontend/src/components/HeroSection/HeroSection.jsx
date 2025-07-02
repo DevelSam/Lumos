@@ -14,7 +14,6 @@ export default function HeroSection({ data }) {
         spaceBetween={0}
         slidesPerView={1}
         speed={800}
-        //   navigation
         autoplay={{ delay: 3000 }}
         loop={true}
       >

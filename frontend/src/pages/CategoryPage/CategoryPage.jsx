@@ -47,7 +47,7 @@ export default function CategoryPage() {
   useEffect(() => {
     const observer = new IntersectionObserver(hundleScroll, { threshold: 0.8 })
     if (cotnainerRef.current) observer.observe(cotnainerRef.current)
-    console.log('123' + cotnainerRef.current)
+
     return () => {
       if (cotnainerRef.current) observer.unobserve(cotnainerRef.current)
     }

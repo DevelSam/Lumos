@@ -44,7 +44,7 @@ const useAuth = () => {
         body: JSON.stringify({ email: userInfo.email, name: userInfo.name, password: userInfo.password }),
       })
       const data = await response.json()
-      console.log(data)
+
       if (!response.ok) {
         return await data.message
       }

@@ -1,7 +1,6 @@
 import { options } from './apiClient'
 export const FetchActorId = async (id) => {
   try {
-    console.log(id)
     const response = await fetch(`https://api.kinopoisk.dev/v1.4/person/${id}`, options)
 
     if (!response.ok) {

@@ -1,7 +1,7 @@
 import styles from './MovieHero.module.css'
 import Modal from '../ui/Modal/Modal'
 import { useContext, useState } from 'react'
-import PropTypes from 'prop-types'
+
 import { BackdropImage } from '../ui/BackdropImage/BackdropImage'
 import AuthContext from '../../context/AuthContext'
 import { ToastContainer, toast } from 'react-toastify'
@@ -87,7 +87,4 @@ export default function MovieHero({ filmsdata }) {
       <ToastContainer pauseOnHover={false} />
     </section>
   )
-}
-MovieHero.propTypes = {
-  filmsdata: PropTypes.object,
 }

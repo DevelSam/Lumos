@@ -13,13 +13,12 @@ const QuestionsModal = memo(function QuestiosnModal({ open, setOpen }) {
   const { addQuestion } = useUserQuestion()
   const hundleClose = () => {
     setOpen(false)
-    console.log(hundleClose)
   }
   const hundleSubmit = async (e) => {
     e.preventDefault()
     if (text.length > 0) {
       const check = await addQuestion(text)
-      console.log(check)
+
       if (!check) {
         setError('')
         navigate(location.pathname == '/profile' ? 0 : '/profile')

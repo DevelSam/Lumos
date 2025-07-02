@@ -24,7 +24,6 @@ const KinoSlider = memo(function kino({ data, title, collection }) {
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           speed={800}
-          // breakpoints={}
           slidesPerView={4}
           style={{
             height: 'auto',

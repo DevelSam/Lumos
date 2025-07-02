@@ -11,7 +11,7 @@ export default function RegistrationForm({ toggle }) {
     e.preventDefault()
     if (formData.password == formData.repassword) {
       const check = await registration(formData)
-      console.log(check)
+
       if (!check) {
         setError('')
         toggle()

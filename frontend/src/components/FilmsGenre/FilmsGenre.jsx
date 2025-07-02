@@ -23,9 +23,7 @@ export default function FilmsGenre() {
                 </div>
                 {movie.rating.imdb || movie.rating.kp ? (
                   <div className={styles.score}>
-                    <div className={styles.scoreContainer}>
-                      {/* <span className={styles.number}> { formatRationg(movie.rating.imdb || movie.rating.kp)}</span> */}
-                    </div>
+                    <div className={styles.scoreContainer}></div>
                   </div>
                 ) : null}
               </Link>

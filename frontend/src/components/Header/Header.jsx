@@ -35,11 +35,7 @@ export default function Header() {
         <div className={`${styles.content}  ${active ? styles.activeBurger : ' '}`}>
           <nav className={styles.nav}>
             <ul className={styles.list}>
-              <NavLink
-                //   activeClassName={'active'}
-                className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles.itemLink}`}
-                to='/'
-              >
+              <NavLink className={({ isActive }) => (isActive ? styles.active : '') + ` ${styles.itemLink}`} to='/'>
                 <li className={styles.item}>Главная</li>
               </NavLink>
               <NavLink
@@ -67,14 +63,8 @@ export default function Header() {
           </nav>
           <div className={styles.searchBlock}>
             <Search />
-            {/* <button className={`${styles['button-tarif']} button-watch `}>Выбрать тариф</button> */}
+
             <Link to={isAuth ? '/profile' : '/auth'}>
-              {/* <nav className='header-nav__kabinet'>
-              <div className='header-kabinet'>
-                <img className='header-kabinet__img' src={iconUser} alt='' />
-              </div>
-              
-            </nav> */}
               <Button className={styles.button} type='primary'>
                 {isAuth ? 'Профиль' : 'Войти'}
               </Button>

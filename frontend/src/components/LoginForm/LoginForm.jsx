@@ -13,7 +13,7 @@ export default function LoginForm({ toggle }) {
     e.preventDefault()
     if (formData.email !== ' ' && formData.password !== ' ') {
       const check = await login(formData)
-      console.log(check)
+
       if (!check) {
         setError('')
 

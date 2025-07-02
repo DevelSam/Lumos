@@ -11,17 +11,14 @@ export default memo(function MovieInfo({ filmsdata }) {
   }, [likes, dislikes])
   useEffect(() => {
     if (films.length > 0) {
-      console.log(`123123123123` + films)
       films.forEach((element) => {
         if (element.filmId == filmsdata.id) {
           if (element.filmLike) {
             setLikes(true)
             setDislikes(false)
-            console.log('Пользователю нравится')
           } else {
             setDislikes(true)
             setLikes(false)
-            console.log('Пользователю не нравится')
           }
         }
       })

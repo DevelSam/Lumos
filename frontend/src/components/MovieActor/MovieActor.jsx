@@ -2,7 +2,7 @@ import styles from './MovieActor.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+
 import 'swiper/css'
 import 'swiper/css/bundle'
 import { ImageComponent } from '../ui/ImageComponent/ImageComponent'
@@ -62,8 +62,4 @@ export default function MovieActor({ filmsdata }) {
       </div>
     </section>
   )
-}
-
-MovieActor.propTypes = {
-  filmsdata: PropTypes.object,
 }

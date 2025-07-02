@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import styles from './MovieSimular.module.css'
 import 'swiper/css'
 import 'swiper/css/bundle'
@@ -74,7 +73,4 @@ export default function MovieSimular({ data }) {
       </div>
     </section>
   )
-}
-MovieSimular.propTypes = {
-  data: PropTypes.object,
 }

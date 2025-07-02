@@ -6,7 +6,7 @@ export const FetchCollection = async (list) => {
     if (!response.ok) {
       throw new Error('Запрос не сработал!')
     }
-    console.log(response)
+
     return await response.json()
   } catch (err) {
     console.log(err)

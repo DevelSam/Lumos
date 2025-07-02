@@ -10,7 +10,7 @@ import FormatRating from '../../utils/FormatRating'
 export default function CollectionsPage() {
   const query = useParams()
   const collection = query.list
-  console.log(typeof collection)
+
   const { data: CollectionData, isLoading: CollectionDataLoading } = useQuery(['CollectionData', collection], () =>
     FetchCollectionMovies(collection),
   )

@@ -9,9 +9,7 @@ export const BackdropImage = ({ className, src, children }) => {
 
     image.onload = () => setLoading(true)
   }, [src])
-  {
-    console.log(placeholder)
-  }
+
   return (
     <div
       className={`random-content ${loaded ? 'loaded' : ''} ${className}`}

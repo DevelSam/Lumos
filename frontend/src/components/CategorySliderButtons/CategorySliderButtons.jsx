@@ -39,24 +39,22 @@ const CategorySliderButtons = memo(function categorySliderButtons({ data, setSta
             e.preventDefault()
             setState('')
           }}
-          className={`${styles.button} button`}
+          className={`${styles.button}`}
         >
           Все категории
         </div>
       </SwiperSlide>
       {data.map((value, index) => (
         <SwiperSlide key={index}>
-          {/* <Link to={`/type/${value.name}` } className={styles.link}  onClick={handleButtonClick}> */}
           <div
             onClick={(e) => {
               e.preventDefault()
               setState(encodeURI(value.name))
             }}
-            className={`${styles.button} button`}
+            className={`${styles.button}`}
           >
             {value.name}
           </div>
-          {/* </Link> */}
         </SwiperSlide>
       ))}
     </Swiper>

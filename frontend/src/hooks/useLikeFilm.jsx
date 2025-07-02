@@ -40,7 +40,6 @@ const useLikeFilm = () => {
   const getLikeFilms = useCallback(async () => {
     setLoading(true)
     try {
-      console.log(import.meta.VITE_BASE_URL)
       const response = await fetch(`${import.meta.env.VITE_BASE_URL}/user/likeFilms`, {
         headers: {
           'Content-Type': 'application/json charset=utf-8',
