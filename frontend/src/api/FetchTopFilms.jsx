@@ -2,7 +2,7 @@ import { options } from './apiClient'
 export const FetchTopFilms = async () => {
   try {
     const response = await fetch(
-      'https://api.kinopoisk.dev/v1.4/movie?page=1&limit=12&selectFields=id&selectFields=name&selectFields=rating&selectFields=poster&selectFields=top250&notNullFields=top250&sortField=top250&sortType=1&type=movie',
+      'https://api.poiskkino.dev/v1.4/movie?page=1&limit=12&selectFields=id&selectFields=name&selectFields=rating&selectFields=poster&selectFields=top250&notNullFields=top250&sortField=top250&sortType=1&type=movie',
       options,
     )
 
