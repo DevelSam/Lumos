@@ -3,7 +3,7 @@ import { options } from './apiClient'
 export const FetchCollectionMovies = async (list) => {
   try {
     const response = await fetch(
-      `https://api.kinopoisk.dev/v1.4/movie?page=1&limit=30&lists=${list}&sortField=rating.kp&sortType=-1&selectFields=id&selectFields=name&selectFields=poster&selectFields=year&selectFields=rating`,
+      `https://api.poiskkino.dev/v1.4/movie?page=1&limit=30&lists=${list}&sortField=rating.kp&sortType=-1&selectFields=id&selectFields=name&selectFields=poster&selectFields=year&selectFields=rating`,
       options,
     )
 
